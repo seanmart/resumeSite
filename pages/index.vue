@@ -5,7 +5,7 @@
 </template>
 
 <script>
-import introduction from '@/components/introduction'
+import introduction from '@/components/Introduction'
 export default {
   components: { introduction }
 }

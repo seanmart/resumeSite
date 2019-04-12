@@ -11,7 +11,7 @@ collections:
     files:
       - label: 'Introduction'
         name: 'introduction'
-        file: content/introduction.js
+        file: content/introduction.json
         fields:
           - label: 'Section Name'
             name: 'sectionName'

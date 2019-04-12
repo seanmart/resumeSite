@@ -5,7 +5,7 @@
 </template>
 
 <script>
-import introduction from '@/static/content/introduction.json'
+import introduction from '@/content/introduction.json'
 export default {
   computed: {
     data() {

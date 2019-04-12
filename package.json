@@ -12,8 +12,7 @@
   },
   "dependencies": {
     "cross-env": "^5.2.0",
-    "nuxt": "^2.4.0",
-    "storyblok-nuxt": "^1.0.1"
+    "nuxt": "^2.4.0"
   },
   "devDependencies": {
     "css-loader": "^2.1.1",

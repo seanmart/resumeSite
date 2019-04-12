@@ -6,30 +6,26 @@ publish_mode: 'editorial_workflow'
 media_folder: 'static/images/uploads'
 
 collections:
-  - label: 'Sections'
+  - label: 'Introduction'
     name: 'sections'
-    folder: 'content/sections'
-    files:
-      - label: 'Introduction'
-        name: 'introduction'
-        file: 'content/sections/introduction.yml'
-        fields:
-          - label: 'Section Name'
-            name: 'sectionName'
-            default: 'Introduction'
-            widget: 'string'
-            required: true
-          - label: 'Name'
-            name: 'name'
-            widget: 'string'
-            required: true
-          - label: 'Description'
-            name: 'description'
-            widget: 'text'
-            required: false
-          - label: 'Photo'
-            name: 'photo'
-            widget: 'file'
-            media_library:
-              config:
-                multiple: false
+    folder: 'content/introduction'
+    fields:
+      - label: 'Section Name'
+        name: 'sectionName'
+        default: 'Introduction'
+        widget: 'string'
+        required: true
+      - label: 'Name'
+        name: 'name'
+        widget: 'string'
+        required: true
+      - label: 'Description'
+        name: 'description'
+        widget: 'text'
+        required: false
+      - label: 'Photo'
+        name: 'photo'
+        widget: 'file'
+        media_library:
+          config:
+            multiple: false

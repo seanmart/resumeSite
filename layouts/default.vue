@@ -5,9 +5,7 @@
 </template>
 
 <script>
-  export default{
-
-  }
+export default {}
 </script>
 
 <style>
@@ -30,4 +28,7 @@ html {
   margin: 0;
 }
 
+section {
+  min-height: 100vh;
+}
 </style>

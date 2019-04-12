@@ -1,11 +1,12 @@
 <template>
-  <section>
-    this is the page guys
-  </section>
+  <div>
+    <introduction />
+  </div>
 </template>
 
 <script>
+import introduction from '@/components/introduction'
 export default {
-  computed: {}
+  components: { introduction }
 }
 </script>

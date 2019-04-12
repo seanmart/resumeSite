@@ -1,6 +1,6 @@
 <template>
   <section>
-    this is the page
+    this is the page guys
   </section>
 </template>
 

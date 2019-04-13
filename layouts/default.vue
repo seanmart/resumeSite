@@ -5,13 +5,22 @@
 </template>
 
 <script>
-export default {}
+export default {
+  head: {
+    link: [
+      {
+        rel: 'stylesheet',
+        href:
+          'https://fonts.googleapis.com/css?family=EB+Garamond:400,400i,500,500i'
+      }
+    ]
+  }
+}
 </script>
 
 <style>
 html {
-  font-family: 'Source Sans Pro', -apple-system, BlinkMacSystemFont, 'Segoe UI',
-    Roboto, 'Helvetica Neue', Arial, sans-serif;
+  font-family: 'EB Garamond', serif;
   font-size: 16px;
   word-spacing: 1px;
   -ms-text-size-adjust: 100%;
@@ -30,38 +39,42 @@ html {
 
 /*--- global styles ---*/
 
-section, .full-height {
+section,
+.full-height {
   height: 100vh;
 }
 
-.border{
-  border: 1px solid black
+.border {
+  border: 1px solid black;
 }
 
-.site-width{
+.site-width {
   display: block;
   max-width: 1500px;
   margin: 0px auto;
 }
 
-.left-padding, .width-padding, .padding{
+.left-padding,
+.width-padding,
+.padding {
   padding-left: 5vw;
 }
 
-.right-padding, .width-padding, .padding{
+.right-padding,
+.width-padding,
+.padding {
   padding-right: 5vw;
 }
 
-.top-padding, .height-padding, .padding{
+.top-padding,
+.height-padding,
+.padding {
   padding-top: 5vw;
 }
 
-.bottom-padding, .height-padding, .padding{
+.bottom-padding,
+.height-padding,
+.padding {
   padding-bottom: 5vw;
 }
-
-
-
-
-
 </style>

@@ -1,22 +1,15 @@
 <template lang="html">
   <section class="site-width width-padding intro-container">
-      <div class="intro-text border">
+      <div class="intro-text">
         There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable. If you are going to use a passage of Lorem Ipsum
       </div>
-      <div class="intro-image border">
-        <img :src="data.photo" alt="">
-      </div>
+      <div class="intro-image" :style="{backgroundImage: `url(${data.photo})`}"/>
   </section>
 </template>
 
 <script>
-import introduction from '@/content/introduction.json'
 export default {
-  computed: {
-    data() {
-      return introduction
-    }
-  }
+  props:['data']
 }
 </script>
 
@@ -25,13 +18,14 @@ export default {
 .intro-container{
   display: flex;
   flex-direction: row;
+  background: #f5f5f5;
 }
 
 .intro-text{
-  flex: 1 1 33.333%;
+  flex: 1 1 25%;
   display: flex;
   align-items: center;
-  padding-right: 2.5vw
+  margin-right: 20px
 }
 
 .intro-image{
@@ -39,11 +33,11 @@ export default {
   display: flex;
   align-items: flex-end;
   justify-content: center;
-  padding-left: 2.5vw
-}
+  margin-left: 20px;
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: bottom;
 
-.intro-image img{
-  width: 100%;
 }
 
 .test{
@@ -59,12 +53,13 @@ export default {
   }
 
   .intro-text{
-    padding:0px;
+    margin-right:0px;
+    margin-bottom: 20px;
   }
 
   .intro-image{
-    flex: 0 0 auto;
-    padding:0px;
+    margin-left:0px;
+    margin-top: 20px;
   }
 }
 

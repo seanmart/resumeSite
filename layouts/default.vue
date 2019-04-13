@@ -28,7 +28,40 @@ html {
   margin: 0;
 }
 
-section {
-  min-height: 100vh;
+/*--- global styles ---*/
+
+section, .full-height {
+  height: 100vh;
 }
+
+.border{
+  border: 1px solid black
+}
+
+.site-width{
+  display: block;
+  max-width: 1500px;
+  margin: 0px auto;
+}
+
+.left-padding, .width-padding, .padding{
+  padding-left: 5vw;
+}
+
+.right-padding, .width-padding, .padding{
+  padding-right: 5vw;
+}
+
+.top-padding, .height-padding, .padding{
+  padding-top: 5vw;
+}
+
+.bottom-padding, .height-padding, .padding{
+  padding-bottom: 5vw;
+}
+
+
+
+
+
 </style>

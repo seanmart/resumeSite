@@ -4,9 +4,7 @@
         There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable. If you are going to use a passage of Lorem Ipsum
       </div>
       <div class="intro-image border">
-        <div class="test">
-
-        </div>
+        <img :src="data.photo" alt="">
       </div>
   </section>
 </template>
@@ -42,6 +40,10 @@ export default {
   align-items: flex-end;
   justify-content: center;
   padding-left: 2.5vw
+}
+
+.intro-image img{
+  width: 100%;
 }
 
 .test{

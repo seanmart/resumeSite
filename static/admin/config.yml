@@ -3,7 +3,7 @@ backend:
   repo: 'seanmart/resumeSite' # Branch to update (optional; defaults to master)
   branch: 'master'
 publish_mode: 'editorial_workflow'
-media_folder: 'static/images/uploads'
+media_folder: 'images/uploads'
 
 collections:
   - label: 'Sections'

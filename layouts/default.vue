@@ -5,22 +5,12 @@
 </template>
 
 <script>
-export default {
-  head: {
-    link: [
-      {
-        rel: 'stylesheet',
-        href:
-          'https://fonts.googleapis.com/css?family=EB+Garamond:400,400i,500,500i'
-      }
-    ]
-  }
-}
+export default {}
 </script>
 
 <style>
 html {
-  font-family: 'EB Garamond', serif;
+  font-family: 'EB Garamond', sans-serif;
   font-size: 16px;
   word-spacing: 1px;
   -ms-text-size-adjust: 100%;
@@ -28,6 +18,38 @@ html {
   -moz-osx-font-smoothing: grayscale;
   -webkit-font-smoothing: antialiased;
   box-sizing: border-box;
+}
+
+h1,
+h2,
+h3 {
+  font-family: 'Montserrat', sans-serif;
+}
+
+h1 {
+  font-size: calc(2em + 2vw);
+  font-weight: 400;
+  margin-bottom: 0px;
+  line-height: .8em
+}
+
+h1::after{
+  content:"";
+  display: block;
+  width: 50px;
+  height: 5px;
+  background: #ddd;
+  margin: 40px 0px;
+}
+
+@media screen and (max-width: 700px){
+  h1{
+    text-align: center;
+  }
+  h1::after{
+    margin-left: auto;
+    margin-right: auto;
+  }
 }
 
 *,
@@ -39,16 +61,14 @@ html {
 
 /*--- global styles ---*/
 
-section {
-  min-height: 100vh;
-}
 .container {
   min-height: 100vh;
   padding-top: 90px;
+  border-top: 1px solid #eee;
 }
 
-.border {
-  border: 1px solid black;
+.container.first {
+  border-top: none;
 }
 
 .site-width {
@@ -63,7 +83,4 @@ section {
   height: 70px;
 }
 
-.line {
-  border-bottom: 1px solid #eee;
-}
 </style>

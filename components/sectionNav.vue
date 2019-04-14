@@ -7,6 +7,7 @@
     <template v-for="(section, index) in data">
       <a
         href="#"
+        class="nav-height"
         v-scroll-to="{ el: `#${section.id}`, duration: 750 }"
         :class="{ active: section.id === activeSection }"
         @click="setActiveSection(section.id)"
@@ -85,14 +86,18 @@ export default {
   background: rgba(#fff, 0);
   display: flex;
   justify-content: center;
-  align-items: center;
+  overflow: hidden;
 }
 
 .section-nav a{
   text-decoration: none;
   font-size: 1em;
   color: #777;
-  padding: 5px 2vw;
+  flex: 0 0 auto;
+  padding: 0px 2vw;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .section-nav a.active{
@@ -111,6 +116,18 @@ export default {
 
 .section-nav.unstick{
   animation: slideoff .25s forwards
+}
+
+@media screen and (max-width: 700px){
+  .section-nav{
+    flex-direction: column;
+    justify-content: flex-start;
+  }
+
+  .section-nav a.active{
+    order: -1
+  }
+
 }
 
 @keyframes slideon{

@@ -1,7 +1,8 @@
 <template lang="html">
   <section class="site-width" :id="data.id">
-    <div class="intro container">
+    <div class="intro container first">
       <div class="intro-text">
+        <h1>{{ data.name }}</h1>
         <p>{{ data.description }}</p>
       </div>
       <div
@@ -9,7 +10,6 @@
         :style="{ backgroundImage: `url(${data.photo})` }"
       />
     </div>
-    <div class="line" />
   </section>
 </template>
 
@@ -30,7 +30,8 @@ export default {
 .intro-text{
   flex: 1 1 25%;
   display: flex;
-  align-items: center;
+  flex-direction: column;
+  justify-content: center;
   margin-right: 20px
 }
 
@@ -53,7 +54,7 @@ export default {
 }
 
 @media screen and (max-width: 700px){
-  .intro-container{
+  .intro{
     flex-direction: column;
     justify-content: flex-end;
   }

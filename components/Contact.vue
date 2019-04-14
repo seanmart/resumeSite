@@ -1,6 +1,8 @@
 <template lang="html">
-  <section :id="data.id" class="container">
-    contact
+  <section :id="data.id" class="site-width">
+    <div class="container">
+      contact
+    </div>
   </section>
 </template>
 

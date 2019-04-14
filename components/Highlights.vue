@@ -1,6 +1,8 @@
 <template lang="html">
-  <section :id="data.id" class="container">
-    highlights
+  <section :id="data.id" class="site-width">
+    <div class="container">
+      highlights
+    </div>
   </section>
 </template>
 

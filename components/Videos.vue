@@ -1,6 +1,8 @@
 <template lang="html">
-  <section :id="data.id" class="container">
-    videos
+  <section :id="data.id" class="site-width">
+    <div class="container">
+      videos
+    </div>
   </section>
 </template>
 

@@ -42,16 +42,6 @@ h1::after{
   margin: 40px 0px;
 }
 
-@media screen and (max-width: 700px){
-  h1{
-    text-align: center;
-  }
-  h1::after{
-    margin-left: auto;
-    margin-right: auto;
-  }
-}
-
 *,
 *:before,
 *:after {
@@ -81,6 +71,21 @@ h1::after{
 
 .nav-height {
   height: 70px;
+}
+
+@media screen and (max-width: 700px){
+  h1{
+    text-align: center;
+  }
+  h1::after{
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .site-width{
+    padding-left: 10vw;
+    padding-right: 10vw;
+  }
 }
 
 </style>

@@ -60,7 +60,7 @@ export default {
         let el = document.getElementById(id).getBoundingClientRect()
 
         //active section
-        if (el.bottom >= 20 && !found) {
+        if (el.bottom >= 40 && !found) {
           found = true
           this.activeSection = id
         }

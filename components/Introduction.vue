@@ -56,17 +56,26 @@ export default {
 @media screen and (max-width: 700px){
   .intro{
     flex-direction: column;
-    justify-content: flex-end;
+    justify-content: center;
+    align-items: center;
   }
 
   .intro-text{
+    flex: 0 0 auto;
     margin-right:0px;
-    margin-bottom: 60px;
+    justify-content: flex-start;
+    margin-bottom: 40px;
   }
 
   .intro-image{
     order: -1;
+    flex: 0 0 auto;
     margin-left:0px;
+    margin-bottom: 60px;
+    height: 40vw;
+    width: 40vw;
+    border-radius: 100%;
+    box-shadow: 0px 2px 7px rgba(0,0,0,.1)
   }
 }
 </style>

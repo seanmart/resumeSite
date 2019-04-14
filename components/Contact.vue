@@ -1,8 +1,6 @@
 <template lang="html">
-  <section :id="data.id" class="site-width">
-    <div class="container">
-      contact
-    </div>
+  <section :id="data.id">
+    contact
   </section>
 </template>
 
@@ -12,4 +10,8 @@ export default {
 }
 </script>
 
-<style lang="css"></style>
+<style scoped>
+section {
+  height: 100vh;
+}
+</style>

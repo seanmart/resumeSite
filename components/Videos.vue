@@ -1,8 +1,6 @@
 <template lang="html">
-  <section :id="data.id" class="site-width">
-    <div class="container">
-      videos
-    </div>
+  <section :id="data.id" class="videos">
+    videos
   </section>
 </template>
 
@@ -12,4 +10,9 @@ export default {
 }
 </script>
 
-<style lang="css"></style>
+<style scoped>
+section {
+  height: 100vh;
+  min-height: 600px;
+}
+</style>

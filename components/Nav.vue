@@ -1,13 +1,9 @@
 <template lang="html">
-  <div
-    class="section-nav nav-height"
-    :class="{ sticky, unstick }"
-    ref="sectionNav"
-  >
+  <nav :class="{ sticky, unstick }" :style="height">
     <template v-for="(section, index) in data">
       <a
         href="#"
-        class="nav-height"
+        :style="height"
         v-scroll-to="{ el: `#${section.id}`, duration: 750 }"
         :class="{ active: section.id === activeSection }"
         @click="setActiveSection(section.id)"
@@ -15,14 +11,15 @@
         {{ section.sectionName }}
       </a>
     </template>
-  </div>
+  </nav>
 </template>
 
 <script>
 export default {
   props: {
     data: Array,
-    navActive: String
+    navActive: String,
+    navHeight: Number
   },
   data() {
     return {
@@ -33,6 +30,10 @@ export default {
     }
   },
   computed: {
+    height() {
+      return { height: `${this.navHeight}px` }
+    },
+
     ids() {
       return this.data.map(item => item.id)
     }
@@ -60,7 +61,7 @@ export default {
         let el = document.getElementById(id).getBoundingClientRect()
 
         //active section
-        if (el.bottom >= 70 && !found) {
+        if (el.bottom >= this.navHeight && !found) {
           found = true
           this.activeSection = id
         }
@@ -77,19 +78,20 @@ export default {
 }
 </script>
 
-<style lang="css">
-.section-nav{
+<style scoped>
+nav {
   position: absolute;
   top: 0px;
   left: 0px;
   right: 0px;
   background: rgba(#fff, 0);
   display: flex;
-  justify-content: center;
+  flex-direction: column;
+  justify-content: flex-start;
   overflow: hidden;
 }
 
-.section-nav a{
+a {
   text-decoration: none;
   font-size: 1em;
   color: #777;
@@ -100,50 +102,51 @@ export default {
   justify-content: center;
 }
 
-.section-nav a.active{
+a.active {
   color: #222;
+  order: -1;
 }
 
-.section-nav.sticky, .section-nav.unstick{
+.sticky,
+.unstick {
   position: fixed;
   background: #fff;
-  box-shadow: 0px 0px 3px rgba(0,0,0,.1)
+  box-shadow: 0px 0px 3px rgba(0, 0, 0, 0.1);
 }
 
-.section-nav.sticky{
-  animation: slideon .25s
+.sticky {
+  animation: slideon 0.25s;
 }
 
-.section-nav.unstick{
-  animation: slideoff .25s forwards
+.unstick {
+  animation: slideoff 0.25s forwards;
 }
 
-@media screen and (max-width: 700px){
-  .section-nav{
-    flex-direction: column;
-    justify-content: flex-start;
+@media screen and (orientation: landscape) {
+  nav {
+    flex-direction: row;
+    justify-content: center;
   }
 
-  .section-nav a.active{
-    order: -1
+  a.active {
+    order: initial;
   }
-
 }
 
-@keyframes slideon{
-  0%{
+@keyframes slideon {
+  0% {
     transform: translateY(-100%);
   }
-  100%{
+  100% {
     transform: translateY(0%);
   }
 }
 
-@keyframes slideoff{
-  0%{
+@keyframes slideoff {
+  0% {
     transform: translateY(0%);
   }
-  100%{
+  100% {
     transform: translateY(-100%);
   }
 }

@@ -1,81 +1,66 @@
 <template lang="html">
-  <section class="site-width" :id="data.id">
-    <div class="intro container first">
-      <div class="intro-text">
-        <h1>{{ data.name }}</h1>
-        <p>{{ data.description }}</p>
-      </div>
-      <div
-        class="intro-image"
-        :style="{ backgroundImage: `url(${data.photo})` }"
-      />
+  <section :id="data.id">
+    <div class="image" :style="img(data.photo)" />
+    <div class="text">
+      <h1>{{ data.name }}</h1>
+      <p>{{ data.description }}</p>
     </div>
   </section>
 </template>
 
 <script>
 export default {
-  props: ['data']
+  props: ['data'],
+  methods: {
+    img(file) {
+      return { backgroundImage: `url(${file})` }
+    }
+  }
 }
 </script>
 
-<style lang="css">
-
-.intro{
-  display: flex;
-  flex-direction: row;
-  background: #fff;
-}
-
-.intro-text{
-  flex: 1 1 25%;
+<style scoped>
+section {
+  min-height: 100vh;
   display: flex;
   flex-direction: column;
   justify-content: center;
-  margin-right: 20px
+  align-items: center;
+  background: #fff;
 }
 
-.intro-image{
-  flex: 1 1 75%;
-  display: flex;
-  align-items: flex-end;
-  justify-content: center;
-  margin-left: 20px;
+.text {
+  flex: 0 0 auto;
+}
+
+.image {
+  flex: 0 0 auto;
+  padding: 20%;
+  margin-bottom: 5vh;
+  border-radius: 100%;
   background-size: contain;
   background-repeat: no-repeat;
   background-position: bottom;
-
+  box-shadow: 0px 2px 7px rgba(0, 0, 0, 0.1);
 }
 
-.test{
-  background: red;
-  height: 200px;
-  width: 100%;
-}
-
-@media screen and (max-width: 700px){
-  .intro{
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
+@media screen and (orientation: landscape) and (min-width: 800px) {
+  section {
+    flex-direction: row;
   }
 
-  .intro-text{
-    flex: 0 0 auto;
-    margin-right:0px;
-    justify-content: flex-start;
-    margin-bottom: 40px;
+  .text {
+    flex: 1 1 auto;
   }
 
-  .intro-image{
-    order: -1;
-    flex: 0 0 auto;
-    margin-left:0px;
-    margin-bottom: 60px;
-    height: 40vw;
-    width: 40vw;
-    border-radius: 100%;
-    box-shadow: 0px 2px 7px rgba(0,0,0,.1)
+  .image {
+    flex: 0 0 60%;
+    align-self: stretch;
+    margin-right: 20px;
+    margin-bottom: 0px;
+    border-radius: 0px;
+    box-shadow: none;
+    padding: 0px;
   }
 }
 </style>

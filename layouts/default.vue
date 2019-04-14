@@ -20,28 +20,6 @@ html {
   box-sizing: border-box;
 }
 
-h1,
-h2,
-h3 {
-  font-family: 'Montserrat', sans-serif;
-}
-
-h1 {
-  font-size: calc(2em + 2vw);
-  font-weight: 400;
-  margin-bottom: 0px;
-  line-height: .8em
-}
-
-h1::after{
-  content:"";
-  display: block;
-  width: 50px;
-  height: 5px;
-  background: #ddd;
-  margin: 40px 0px;
-}
-
 *,
 *:before,
 *:after {
@@ -51,41 +29,48 @@ h1::after{
 
 /*--- global styles ---*/
 
-.container {
-  min-height: 100vh;
-  padding-top: 90px;
-  border-top: 1px solid #eee;
-}
-
-.container.first {
-  border-top: none;
-}
-
-.site-width {
+section {
   display: block;
-  max-width: 1500px;
+  max-width: 1200px;
   margin: 0px auto;
-  padding-left: 5vw;
-  padding-right: 5vw;
+  padding-left: 50px;
+  padding-right: 50px;
+  border-bottom: 1px solid #eee;
 }
 
-.nav-height {
-  height: 70px;
+h1,
+h2,
+h3 {
+  font-family: 'Montserrat', sans-serif;
+  text-align: center;
 }
 
-@media screen and (max-width: 700px){
-  h1{
-    text-align: center;
-  }
-  h1::after{
-    margin-left: auto;
-    margin-right: auto;
-  }
-
-  .site-width{
-    padding-left: 10vw;
-    padding-right: 10vw;
-  }
+h1 {
+  font-size: calc(2em + 1vw);
+  font-weight: 400;
+  margin-bottom: 0px;
+  line-height: 0.8em;
 }
 
+h1::after {
+  content: '';
+  display: block;
+  width: 50px;
+  height: 5px;
+  background: #ddd;
+  margin: 40px auto;
+}
+
+@media screen and (orientation: landscape) and (min-width: 800px) {
+  h1,
+  h2,
+  h3 {
+    text-align: left;
+  }
+
+  h1::after {
+    margin-left: 0px;
+    margin-right: 0px;
+  }
+}
 </style>

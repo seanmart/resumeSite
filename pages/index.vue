@@ -1,23 +1,23 @@
 <template>
   <div class="page">
-    <section-nav :data="data.nav" navActive="highlights" />
-    <introduction :data="data.sections.introduction" />
-    <highlights :data="data.sections.highlights" />
-    <videos :data="data.sections.videos" />
-    <contact :data="data.sections.contact" />
+    <topnav :data="data.nav" :navHeight="navHeight" navActive="highlights" />
+    <introduction :data="data.sections.introduction" :style="style" />
+    <highlights :data="data.sections.highlights" :style="style" />
+    <videos :data="data.sections.videos" :style="style" />
+    <contact :data="data.sections.contact" :style="style" />
   </div>
 </template>
 
 <script>
 import sectionData from '@/content/sections'
-import sectionNav from '@/components/sectionNav'
+import topnav from '@/components/Nav'
 import introduction from '@/components/Introduction'
 import highlights from '@/components/Highlights'
 import videos from '@/components/Videos'
 import contact from '@/components/Contact'
 export default {
   components: {
-    sectionNav,
+    topnav,
     introduction,
     videos,
     highlights,
@@ -29,6 +29,9 @@ export default {
     }
   },
   computed: {
+    style() {
+      return { paddingTop: `${this.navHeight}px` }
+    },
     data() {
       let data = {}
       data.sections = sectionData

@@ -39,9 +39,9 @@ html {
 
 /*--- global styles ---*/
 
-section,
-.full-height {
-  height: 100vh;
+.container {
+  min-height: 100vh;
+  padding-top: 90px;
 }
 
 .border {
@@ -52,29 +52,15 @@ section,
   display: block;
   max-width: 1500px;
   margin: 0px auto;
-}
-
-.left-padding,
-.width-padding,
-.padding {
   padding-left: 5vw;
-}
-
-.right-padding,
-.width-padding,
-.padding {
   padding-right: 5vw;
 }
 
-.top-padding,
-.height-padding,
-.padding {
-  padding-top: 5vw;
+.nav-height {
+  height: 70px;
 }
 
-.bottom-padding,
-.height-padding,
-.padding {
-  padding-bottom: 5vw;
+.line {
+  border-bottom: 1px solid #eee;
 }
 </style>

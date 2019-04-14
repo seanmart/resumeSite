@@ -1,33 +1,44 @@
 <template>
-  <div>
-    <sectionNav
-      :data="data"
-      :style="{ height: `${navHeight}px` }"
-      :show="showNav"
-    />
-    <introduction
-      :data="data.introduction"
-      :style="{ paddingTop: `${navHeight * 1.5}px` }"
-    />
-    <trigger @trigger="showNav = $event" />
-    <videos />
-    <videos />
+  <div class="page">
+    <section-nav :data="data.nav" navActive="highlights" />
+    <introduction :data="data.sections.introduction" />
+    <highlights :data="data.sections.highlights" />
+    <videos :data="data.sections.videos" />
+    <contact :data="data.sections.contact" />
   </div>
 </template>
 
 <script>
-import data from '@/content/data'
-import trigger from '@/components/trigger'
+import sectionData from '@/content/sections'
 import sectionNav from '@/components/sectionNav'
 import introduction from '@/components/Introduction'
+import highlights from '@/components/Highlights'
 import videos from '@/components/Videos'
+import contact from '@/components/Contact'
 export default {
-  components: { sectionNav, introduction, videos, trigger },
+  components: {
+    sectionNav,
+    introduction,
+    videos,
+    highlights,
+    contact
+  },
   data() {
     return {
-      data: data,
-      navHeight: 60,
-      showNav: false
+      navHeight: 80
+    }
+  },
+  computed: {
+    data() {
+      let data = {}
+      data.sections = sectionData
+      data.nav = [
+        sectionData.introduction,
+        sectionData.highlights,
+        sectionData.videos,
+        sectionData.contact
+      ]
+      return data
     }
   }
 }

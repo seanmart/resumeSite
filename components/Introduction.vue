@@ -1,24 +1,30 @@
 <template lang="html">
-  <section class="site-width width-padding intro-container">
+  <section class="site-width">
+    <div class="intro container" :id="data.id">
       <div class="intro-text">
-        There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable. If you are going to use a passage of Lorem Ipsum
+        <p>{{ data.description }}</p>
       </div>
-      <div class="intro-image" :style="{backgroundImage: `url(${data.photo})`}"/>
+      <div
+        class="intro-image"
+        :style="{ backgroundImage: `url(${data.photo})` }"
+      />
+    </div>
+    <div class="line" />
   </section>
 </template>
 
 <script>
 export default {
-  props:['data']
+  props: ['data']
 }
 </script>
 
 <style lang="css">
 
-.intro-container{
+.intro{
   display: flex;
   flex-direction: row;
-  background: #f5f5f5;
+  background: #fff;
 }
 
 .intro-text{
@@ -62,5 +68,4 @@ export default {
     margin-top: 20px;
   }
 }
-
 </style>

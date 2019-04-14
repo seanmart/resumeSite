@@ -1,6 +1,6 @@
 <template lang="html">
-  <section class="container" :id="data.id">
-    videos
+  <section :id="data.id" class="container">
+    contact
   </section>
 </template>
 

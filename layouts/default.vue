@@ -18,6 +18,7 @@ html {
   -moz-osx-font-smoothing: grayscale;
   -webkit-font-smoothing: antialiased;
   box-sizing: border-box;
+  background: #eee;
 }
 
 *,
@@ -36,6 +37,7 @@ section {
   padding-left: 50px;
   padding-right: 50px;
   border-bottom: 1px solid #eee;
+  background: #fff;
 }
 
 h1,

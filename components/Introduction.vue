@@ -56,7 +56,7 @@ section {
     flex-direction: row;
     max-height: 1000px;
     height: 100vh;
-    min-height: auto;
+    min-height: 400px;
   }
 
   .text {

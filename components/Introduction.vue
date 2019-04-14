@@ -51,6 +51,7 @@ section {
 
   .text {
     flex: 1 1 auto;
+    padding: 40px 0px;
   }
 
   .image {

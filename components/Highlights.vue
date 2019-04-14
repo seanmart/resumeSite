@@ -1,5 +1,5 @@
 <template lang="html">
-  <section :id="data.id">
+  <section :id="data.id" class="container">
     highlights
   </section>
 </template>

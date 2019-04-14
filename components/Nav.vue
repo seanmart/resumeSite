@@ -94,6 +94,7 @@ export default {
 
 <style scoped>
 nav {
+  z-index: 10;
   position: absolute;
   top: 0px;
   left: 0px;

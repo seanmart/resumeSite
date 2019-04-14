@@ -35,8 +35,8 @@ section {
 
 .image {
   flex: 0 0 auto;
-  padding: 20%;
-  margin-bottom: 5vh;
+  padding: 30%;
+  margin: 40px 0px;
   border-radius: 100%;
   background-size: contain;
   background-repeat: no-repeat;
@@ -57,7 +57,6 @@ section {
   .image {
     flex: 0 0 60%;
     align-self: stretch;
-    margin-top: 40px;
     margin-right: 20px;
     margin-bottom: 0px;
     border-radius: 0px;

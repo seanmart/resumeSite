@@ -36,7 +36,7 @@ export default {
 }
 
 .intro-image{
-  flex: 5 1 auto;
+  flex: 1 1 75%;
   display: flex;
   align-items: flex-end;
   justify-content: center;
@@ -65,7 +65,6 @@ export default {
   }
 
   .intro-image{
-    flex: 2 1 auto;
     order: -1;
     margin-left:0px;
     margin-bottom: 20px;

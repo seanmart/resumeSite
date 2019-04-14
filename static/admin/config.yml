@@ -14,6 +14,10 @@ collections:
         name: 'introduction'
         file: 'content/introduction.json'
         fields:
+          - label: 'Id'
+            name: 'id'
+            widget: 'hidden'
+            default: 'introduction'
           - label: 'Section Name'
             name: 'sectionName'
             default: 'Introduction'

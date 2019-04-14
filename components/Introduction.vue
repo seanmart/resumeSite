@@ -1,6 +1,6 @@
 <template lang="html">
-  <section class="site-width">
-    <div class="intro container" :id="data.id">
+  <section class="site-width" :id="data.id">
+    <div class="intro container">
       <div class="intro-text">
         <p>{{ data.description }}</p>
       </div>

@@ -1,5 +1,5 @@
 <template lang="html">
-  <section class="container" :id="data.id">
+  <section :id="data.id">
     videos
   </section>
 </template>

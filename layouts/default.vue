@@ -39,6 +39,9 @@ html {
 
 /*--- global styles ---*/
 
+section {
+  min-height: 100vh;
+}
 .container {
   min-height: 100vh;
   padding-top: 90px;

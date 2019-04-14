@@ -61,10 +61,11 @@ export default {
 
   .intro-text{
     margin-right:0px;
-    margin-bottom: 20px;
+    margin-bottom: 40px;
   }
 
   .intro-image{
+    flex: 2 1 auto;
     order: -1;
     margin-left:0px;
     margin-bottom: 20px;

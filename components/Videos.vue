@@ -1,5 +1,5 @@
 <template lang="html">
-  <section :id="data.id" class="videos">
+  <section :id="data.id">
     videos
   </section>
 </template>
@@ -12,7 +12,6 @@ export default {
 
 <style scoped>
 section {
-  height: 100vh;
-  min-height: 600px;
+  height: 600px;
 }
 </style>

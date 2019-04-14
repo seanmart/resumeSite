@@ -3,6 +3,7 @@
     <div class="image" :style="img(data.photo)" />
     <div class="text">
       <h1>{{ data.name }}</h1>
+      <h3>{{ data.position }}</h3>
       <p>{{ data.description }}</p>
     </div>
   </section>
@@ -38,7 +39,7 @@ section {
 .image {
   flex: 0 0 auto;
   padding: 30%;
-  margin: 0px 0px 40px;
+  margin: 20px 0px 40px;
   border-radius: 100%;
   background-size: contain;
   background-repeat: no-repeat;

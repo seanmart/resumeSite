@@ -1,6 +1,6 @@
 <template>
   <div class="page">
-    <topnav :data="data.nav" :navHeight="navHeight" navActive="highlights" />
+    <topnav :data="data.nav" :height="navHeight" trigger="highlights" />
     <introduction :data="data.sections.introduction" :style="style" />
     <highlights :data="data.sections.highlights" :style="style" />
     <videos :data="data.sections.videos" :style="style" />

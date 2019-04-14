@@ -1,12 +1,17 @@
 <template lang="html">
-  <nav :class="{ sticky, unstick }" :style="height">
+  <nav :class="{ sticky, unstick }" :style="heightStyle">
     <template v-for="(section, index) in data">
       <a
         href="#"
-        :style="height"
-        v-scroll-to="{ el: `#${section.id}`, duration: 750 }"
+        :style="[heightStyle, { animationDuration: `${0.5 + index / 4}s` }]"
         :class="{ active: section.id === activeSection }"
-        @click="setActiveSection(section.id)"
+        @click="setSection(section.id)"
+        v-scroll-to="{
+          el: `#${section.id}`,
+          duration: 750,
+          onStart: () => setScroll(true),
+          onDone: () => setScroll(false)
+        }"
       >
         {{ section.sectionName }}
       </a>
@@ -18,24 +23,27 @@
 export default {
   props: {
     data: Array,
-    navActive: String,
-    navHeight: Number
+    trigger: { type: String, default: null },
+    height: Number
   },
   data() {
     return {
       sticky: false,
       unstick: false,
-      pause: false,
-      activeSection: ''
+      activeSection: null,
+      scrolling: false
     }
   },
   computed: {
-    height() {
-      return { height: `${this.navHeight}px` }
+    heightStyle() {
+      return { height: `${this.height}px` }
     },
-
-    ids() {
-      return this.data.map(item => item.id)
+    els() {
+      let elements = {}
+      this.data.forEach(
+        item => (elements[item.id] = document.getElementById(item.id))
+      )
+      return elements
     }
   },
   watch: {
@@ -55,24 +63,30 @@ export default {
   },
   methods: {
     handleScroll() {
-      let found = this.pause
-
-      this.ids.forEach(id => {
-        let el = document.getElementById(id).getBoundingClientRect()
-
-        //active section
-        if (el.bottom >= this.navHeight && !found) {
-          found = true
-          this.activeSection = id
+      if (this.trigger) this.checkTrigger()
+      if (this.data.length > 0 && !this.scrolling) this.checkActiveSection()
+    },
+    checkActiveSection() {
+      this.data.some(item => {
+        let el = this.els[item.id].getBoundingClientRect()
+        if (el.bottom >= this.height) {
+          this.setSection(item.id)
+          return true
         }
-        //turn on nav
-        if (id === this.navActive) this.sticky = el.top <= 70
+        return false
       })
     },
-    setActiveSection(id) {
+    checkTrigger() {
+      if (this.trigger) {
+        let el = this.els[this.trigger].getBoundingClientRect()
+        this.sticky = el.top <= this.height
+      }
+    },
+    setSection(id) {
       this.activeSection = id
-      this.pause = true
-      setTimeout(() => (this.pause = false), 700)
+    },
+    setScroll(state) {
+      this.scrolling = state
     }
   }
 }
@@ -96,14 +110,16 @@ a {
   font-size: 1em;
   color: #777;
   flex: 0 0 auto;
-  padding: 0px 2vw;
   display: flex;
   align-items: center;
   justify-content: center;
+  transition: transform 0.25s font-weight 0.25s;
+  animation: fadeon forwards;
 }
 
 a.active {
   color: #222;
+  font-weight: bold;
   order: -1;
 }
 
@@ -122,32 +138,19 @@ a.active {
   animation: slideoff 0.25s forwards;
 }
 
-@media screen and (orientation: landscape) {
+@media screen and (min-width: 600px) {
   nav {
     flex-direction: row;
     justify-content: center;
   }
 
+  a {
+    width: 120px;
+    animation: slideon forwards;
+  }
+
   a.active {
     order: initial;
-  }
-}
-
-@keyframes slideon {
-  0% {
-    transform: translateY(-100%);
-  }
-  100% {
-    transform: translateY(0%);
-  }
-}
-
-@keyframes slideoff {
-  0% {
-    transform: translateY(0%);
-  }
-  100% {
-    transform: translateY(-100%);
   }
 }
 </style>

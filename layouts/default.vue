@@ -43,6 +43,7 @@ h2,
 h3 {
   font-family: 'Montserrat', sans-serif;
   text-align: center;
+  letter-spacing: -0.03em;
 }
 
 h1 {

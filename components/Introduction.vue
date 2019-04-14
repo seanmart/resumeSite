@@ -57,6 +57,7 @@ section {
   .image {
     flex: 0 0 60%;
     align-self: stretch;
+    margin-top: 40px;
     margin-right: 20px;
     margin-bottom: 0px;
     border-radius: 0px;

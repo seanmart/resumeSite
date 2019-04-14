@@ -32,6 +32,7 @@ section {
 .text {
   flex: 0 0 auto;
   max-width: 500px;
+  padding: 0px 0px 40px;
 }
 
 .image {

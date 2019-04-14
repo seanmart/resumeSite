@@ -65,8 +65,9 @@ export default {
   }
 
   .intro-image{
+    order: -1;
     margin-left:0px;
-    margin-top: 20px;
+    margin-bottom: 20px;
   }
 }
 </style>

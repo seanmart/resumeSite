@@ -1,6 +1,6 @@
 <template lang="html">
   <section :id="data.id">
-    videos
+    <h1 :id="data.id">{{ data.sectionName }}</h1>
   </section>
 </template>
 

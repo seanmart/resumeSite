@@ -1,6 +1,6 @@
 <template lang="html">
   <section :id="data.id">
-    highlights
+    <h1>{{ data.sectionName }}</h1>
   </section>
 </template>
 

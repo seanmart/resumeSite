@@ -61,6 +61,11 @@ h3 {
   margin: 5px 0px;
 }
 
+p {
+  margin: 7px 0px;
+  font-size: calc(0.85em + 0.1vw);
+}
+
 .bar::after {
   content: '';
   display: block;

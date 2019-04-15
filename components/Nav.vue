@@ -69,7 +69,7 @@ export default {
     checkActiveSection() {
       this.data.some(item => {
         let el = this.els[item.id].getBoundingClientRect()
-        if (el.bottom >= this.height) {
+        if (el.top >= this.height) {
           this.setSection(item.id)
           return true
         }

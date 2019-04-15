@@ -4,7 +4,9 @@
     <div class="text">
       <h1>{{ data.name }}</h1>
       <h3 class="bar">{{ data.position }}</h3>
-      <p>{{ data.description }}</p>
+      <template v-for="item in data.description.split('\n')">
+        <p>{{ item }}</p>
+      </template>
     </div>
   </section>
 </template>

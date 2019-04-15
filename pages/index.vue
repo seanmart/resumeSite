@@ -30,7 +30,7 @@ export default {
   },
   computed: {
     style() {
-      return { paddingTop: `${this.navHeight}px` }
+      return { paddingTop: `${this.navHeight * 1.1}px` }
     },
     data() {
       let data = {}

@@ -25,6 +25,9 @@ collections:
           - label: 'Name'
             name: 'name'
             widget: 'string'
+          - label: 'Position'
+            name: 'position'
+            widget: 'string'
           - label: 'Description'
             name: 'description'
             widget: 'text'
@@ -34,3 +37,10 @@ collections:
             media_library:
               config:
                 multiple: false
+      - label: 'Key Skills'
+        name: 'keySkills'
+        file: 'content/keySkills.json'
+        fields:
+          - label: 'Description'
+            name: 'description'
+            widget: 'text'

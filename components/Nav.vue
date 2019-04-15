@@ -10,7 +10,8 @@
           el: `#${section.id}`,
           duration: 750,
           onStart: () => setScroll(true),
-          onDone: () => setScroll(false)
+          onDone: () => setScroll(false),
+          offset: 0 - height
         }"
       >
         {{ section.sectionName }}
@@ -69,7 +70,7 @@ export default {
     checkActiveSection() {
       this.data.some(item => {
         let el = this.els[item.id].getBoundingClientRect()
-        if (el.top >= this.height) {
+        if (el.bottom > this.height) {
           this.setSection(item.id)
           return true
         }
@@ -108,7 +109,7 @@ nav {
 
 a {
   text-decoration: none;
-  font-size: 1em;
+  font-size: 1.1em;
   color: #777;
   flex: 0 0 auto;
   display: flex;
@@ -144,7 +145,7 @@ a.active {
   }
 
   a {
-    width: 120px;
+    padding: 0px 20px;
   }
 
   a.active {

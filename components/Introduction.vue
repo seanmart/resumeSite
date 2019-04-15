@@ -35,7 +35,6 @@ section {
 .text {
   flex: 0 0 auto;
   max-width: 500px;
-  padding: 0px 0px 40px;
 }
 
 .image {
@@ -59,19 +58,17 @@ section {
   section {
     flex-direction: row;
     max-height: 1000px;
-    height: 100vh;
-    min-height: 400px;
+    padding-bottom: 0px;
   }
 
   .text {
     flex: 1 1 auto;
-    padding: 40px 0px;
+    margin: 40px 0px;
   }
 
   .image {
     flex: 0 0 60%;
     align-self: stretch;
-    margin-top: 40px;
     margin-right: 20px;
     margin-bottom: 0px;
     border-radius: 0px;

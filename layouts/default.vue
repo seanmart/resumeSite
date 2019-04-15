@@ -34,8 +34,7 @@ section {
   display: block;
   max-width: 1200px;
   margin: 0px auto;
-  padding-left: 50px;
-  padding-right: 50px;
+  padding: 50px;
   border-bottom: 1px solid #eee;
   background: #fff;
 }

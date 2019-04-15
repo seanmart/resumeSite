@@ -2,9 +2,9 @@
   <div class="page">
     <topnav :data="data.nav" :height="navHeight" trigger="skills" />
     <introduction :data="data.sections.introduction" :style="style" />
-    <skills :data="data.sections.skills" :style="style" />
-    <videos :data="data.sections.videos" :style="style" />
-    <contact :data="data.sections.contact" :style="style" />
+    <skills :data="data.sections.skills" />
+    <videos :data="data.sections.videos" />
+    <contact :data="data.sections.contact" />
   </div>
 </template>
 
@@ -30,7 +30,7 @@ export default {
   },
   computed: {
     style() {
-      return { paddingTop: `${this.navHeight * 1.1}px` }
+      return { paddingTop: `${this.navHeight}px` }
     },
     data() {
       let data = {}

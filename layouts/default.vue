@@ -45,14 +45,20 @@ h2,
 h3 {
   font-family: 'Montserrat', sans-serif;
   text-align: center;
-  letter-spacing: -0.03em;
+  letter-spacing: -0.02em;
 }
 
 h1 {
-  font-size: calc(1.8em + 1vw);
-  font-weight: 400;
-  margin-bottom: 0px;
+  font-size: calc(1.7em + 1vw);
+  font-weight: 500;
+  margin: 7px 0px;
   line-height: 0.8em;
+}
+
+h3 {
+  font-weight: 400;
+  font-size: calc(0.7em + 1vw);
+  margin: 5px 0px;
 }
 
 .bar::after {

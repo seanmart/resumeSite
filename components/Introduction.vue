@@ -37,7 +37,6 @@ section {
 }
 
 .image {
-  opacity: 0.1;
   flex: 0 0 auto;
   padding: 30%;
   margin: 20px 0px 40px;

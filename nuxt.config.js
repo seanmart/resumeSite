@@ -17,7 +17,8 @@ export default {
       { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' },
       {
         rel: 'stylesheet',
-        href:'https://fonts.googleapis.com/css?family=EB+Garamond:400,400i,500,500i|Montserrat:500,700,900'
+        href:
+          'https://fonts.googleapis.com/css?family=EB+Garamond:400,400i,500,500i|Montserrat:400,500,700,900'
       }
     ]
   },

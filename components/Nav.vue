@@ -115,7 +115,6 @@ a {
   align-items: center;
   justify-content: center;
   transition: transform 0.25s font-weight 0.25s;
-  animation: fadeon forwards;
 }
 
 a.active {
@@ -146,7 +145,6 @@ a.active {
 
   a {
     width: 120px;
-    animation: slideon forwards;
   }
 
   a.active {

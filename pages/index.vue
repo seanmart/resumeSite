@@ -1,10 +1,6 @@
 <template>
-  <div class="page">
-    <topnav
-      :data="sections"
-      :height="page.navHeight"
-      :trigger="sections[1].id"
-    />
+  <div class="page site-width">
+    <topnav :data="sections" :page="page" />
     <template v-for="section in sections">
       <component :is="section.id" :data="{ ...section, page }" />
     </template>
@@ -35,12 +31,14 @@ export default {
     }
   },
   computed: {
-    style() {
-      return { paddingTop: `${this.navHeight * 1.2}px` }
-    },
     sections() {
       return orderBy(values(sectionData), 'order')
     }
   }
 }
 </script>
+<style>
+.page {
+  background: #fff;
+}
+</style>

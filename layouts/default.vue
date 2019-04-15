@@ -10,7 +10,7 @@ export default {}
 
 <style>
 html {
-  font-family: 'EB Garamond', sans-serif;
+  font-family: 'IBM Plex Serif', sans-serif;
   font-size: 16px;
   word-spacing: 1px;
   -ms-text-size-adjust: 100%;
@@ -18,7 +18,7 @@ html {
   -moz-osx-font-smoothing: grayscale;
   -webkit-font-smoothing: antialiased;
   box-sizing: border-box;
-  background: #eee;
+  background: #fff;
 }
 
 *,
@@ -31,12 +31,14 @@ html {
 /*--- global styles ---*/
 
 section {
-  display: block;
-  max-width: 1200px;
-  margin: 0px auto;
-  padding: 50px;
   border-bottom: 1px solid #eee;
-  background: #fff;
+  padding: 80px;
+}
+
+.site-width {
+  display: block;
+  max-width: 1500px;
+  margin: 0px auto;
 }
 
 h1,
@@ -48,21 +50,27 @@ h3 {
 }
 
 h1 {
-  font-size: calc(1.7em + 1vw);
+  font-size: 2em;
   font-weight: 500;
   margin: 7px 0px;
   line-height: 0.8em;
 }
 
-h3 {
+h2 {
   font-weight: 400;
-  font-size: calc(0.7em + 1vw);
+  font-size: 1.5em;
   margin: 5px 0px;
 }
 
+h3 {
+  font-weight: 500;
+  font-size: 0.8em;
+}
+
 p {
-  margin: 7px 0px;
-  font-size: calc(0.85em + 0.1vw);
+  margin: 15px 0px;
+  font-size: 1em;
+  line-height: 1.45em;
 }
 
 .bar::after {
@@ -85,6 +93,14 @@ p {
     margin-left: 0px;
     margin-right: 0px;
   }
+}
+
+.fade-on {
+  animation: fadeon 2s;
+}
+
+.slide-up {
+  animation: slideup 2s;
 }
 
 @keyframes slideup {

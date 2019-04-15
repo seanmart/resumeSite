@@ -18,7 +18,7 @@ export default {
       {
         rel: 'stylesheet',
         href:
-          'https://fonts.googleapis.com/css?family=EB+Garamond:400,400i,500,500i|Montserrat:400,500,700,900'
+          'https://fonts.googleapis.com/css?family=IBM+Plex+Serif:400,400i,500,500i|Montserrat:400,500,700,900'
       }
     ]
   },

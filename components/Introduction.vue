@@ -1,19 +1,24 @@
 <template lang="html">
   <section :id="data.id" :style="{ paddingTop: `${data.page.navHeight}px` }">
-    <div class="image" :style="img" />
-    <div class="text">
+    <div class="image fade-on" :style="img" />
+    <div class="text slide-up">
       <h1>{{ data.name }}</h1>
-      <h3 class="bar">{{ data.position }}</h3>
+      <h2 class="bar">{{ data.position }}</h2>
       <template v-for="d in description">
         <p>{{ d }}</p>
       </template>
+      <div class="link">
+        <btn>View Story</btn>
+      </div>
     </div>
   </section>
 </template>
 
 <script>
+import btn from '@/components/Button'
 export default {
   props: ['data'],
+  components: { btn },
   computed: {
     img() {
       return { backgroundImage: `url(${this.data.photo})` }
@@ -40,9 +45,17 @@ section {
   max-width: 500px;
 }
 
+.link {
+  margin-top: 30px;
+  text-align: center;
+}
+
 .image {
   flex: 0 0 auto;
-  padding: 30%;
+  height: 30vw;
+  width: 30vw;
+  max-height: 200px;
+  max-width: 200px;
   margin: 20px 0px 40px;
   border-radius: 100%;
   background-size: contain;
@@ -51,22 +64,22 @@ section {
   box-shadow: 0px 2px 7px rgba(0, 0, 0, 0.1);
 }
 
-@media screen and (min-width: 700px) {
-  .image {
-    padding: 15%;
-  }
-}
-
 @media screen and (orientation: landscape) and (min-width: 800px) {
   section {
     flex-direction: row;
     max-height: 1000px;
+    height: 100vh;
+    min-height: 500px;
     padding-bottom: 0px;
   }
 
   .text {
     flex: 1 1 auto;
     margin: 40px 0px;
+  }
+
+  .link {
+    text-align: left;
   }
 
   .image {
@@ -76,7 +89,10 @@ section {
     margin-bottom: 0px;
     border-radius: 0px;
     box-shadow: none;
-    padding: 0px;
+    height: auto;
+    width: auto;
+    max-height: 100%;
+    max-width: 100%;
   }
 }
 </style>

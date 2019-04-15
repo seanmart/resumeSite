@@ -1,7 +1,8 @@
 {
   "id": "introduction",
   "sectionName": "Introduction",
-  "name": "Sean Metcalf",
-  "description": "There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable. If you are going to use a passage of Lorem Ipsum, you need to be sure there isn't anything embarrassing hidden in the middle of text.",
+  "name": "Michael Portnoy",
+  "position": "Chief Executive in Finance",
+  "description": "A strategic finance and operations executive and visionary with 20+ years experience. Passionately driven to create a sustainable economic future for all. \nGrew business from the ground up, overseeing nearly $100 million in annual contract revenue and leveraging strategic partnerships with key vendors, distributors, and consulting firms. ",
   "photo": "/images/uploads/person-01.png"
 }

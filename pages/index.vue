@@ -1,10 +1,13 @@
 <template>
   <div class="page">
-    <topnav :data="data.nav" :height="navHeight" trigger="skills" />
-    <introduction :data="data.sections.introduction" :style="style" />
-    <skills :data="data.sections.skills" />
-    <videos :data="data.sections.videos" />
-    <contact :data="data.sections.contact" />
+    <topnav
+      :data="sections"
+      :height="page.navHeight"
+      :trigger="sections[1].id"
+    />
+    <template v-for="section in sections">
+      <component :is="section.id" :data="{ ...section, page }" />
+    </template>
   </div>
 </template>
 
@@ -15,6 +18,7 @@ import introduction from '@/components/Introduction'
 import skills from '@/components/Skills'
 import videos from '@/components/Videos'
 import contact from '@/components/Contact'
+import { orderBy, values } from 'lodash'
 export default {
   components: {
     topnav,
@@ -25,23 +29,17 @@ export default {
   },
   data() {
     return {
-      navHeight: 80
+      page: {
+        navHeight: 80
+      }
     }
   },
   computed: {
     style() {
-      return { paddingTop: `${this.navHeight}px` }
+      return { paddingTop: `${this.navHeight * 1.2}px` }
     },
-    data() {
-      let data = {}
-      data.sections = sectionData
-      data.nav = [
-        sectionData.introduction,
-        sectionData.skills,
-        sectionData.videos,
-        sectionData.contact
-      ]
-      return data
+    sections() {
+      return orderBy(values(sectionData), 'order')
     }
   }
 }

@@ -14,6 +14,10 @@ collections:
         name: 'introduction'
         file: 'content/introduction.json'
         fields:
+          - label: 'Order'
+            name: 'order'
+            widget: 'hidden'
+            default: 0
           - label: 'Id'
             name: 'id'
             widget: 'hidden'
@@ -41,6 +45,10 @@ collections:
         name: 'skills'
         file: 'content/skills.json'
         fields:
+          - label: 'Order'
+            name: 'order'
+            widget: 'hidden'
+            default: 1
           - label: 'Id'
             name: 'id'
             widget: 'hidden'

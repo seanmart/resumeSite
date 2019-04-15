@@ -1,11 +1,11 @@
 <template lang="html">
-  <section :id="data.id">
-    <div class="image" :style="img(data.photo)" />
+  <section :id="data.id" :style="{ paddingTop: `${data.page.navHeight}px` }">
+    <div class="image" :style="img" />
     <div class="text">
       <h1>{{ data.name }}</h1>
       <h3 class="bar">{{ data.position }}</h3>
-      <template v-for="item in data.description.split('\n')">
-        <p>{{ item }}</p>
+      <template v-for="d in description">
+        <p>{{ d }}</p>
       </template>
     </div>
   </section>
@@ -14,9 +14,12 @@
 <script>
 export default {
   props: ['data'],
-  methods: {
-    img(file) {
-      return { backgroundImage: `url(${file})` }
+  computed: {
+    img() {
+      return { backgroundImage: `url(${this.data.photo})` }
+    },
+    description() {
+      return this.data.description.split('\n')
     }
   }
 }

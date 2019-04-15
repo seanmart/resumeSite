@@ -8,9 +8,10 @@
         @click="setSection(section.id)"
         v-scroll-to="{
           el: `#${section.id}`,
-          duration: 750,
+          duration: 1000,
           onStart: () => setScroll(true),
           onDone: () => setScroll(false),
+          easing: 'ease',
           offset: 0 - height
         }"
       >

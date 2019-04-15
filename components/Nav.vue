@@ -120,7 +120,6 @@ a {
 
 a.active {
   color: #222;
-  font-weight: bold;
   order: -1;
 }
 

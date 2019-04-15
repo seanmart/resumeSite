@@ -3,7 +3,7 @@
     <div class="image" :style="img(data.photo)" />
     <div class="text">
       <h1>{{ data.name }}</h1>
-      <h3>{{ data.position }}</h3>
+      <h3 class="bar">{{ data.position }}</h3>
       <p>{{ data.description }}</p>
     </div>
   </section>

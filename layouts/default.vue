@@ -49,13 +49,13 @@ h3 {
 }
 
 h1 {
-  font-size: calc(2em + 1vw);
+  font-size: calc(1.8em + 1vw);
   font-weight: 400;
   margin-bottom: 0px;
   line-height: 0.8em;
 }
 
-h1::after {
+.bar::after {
   content: '';
   display: block;
   width: 50px;
@@ -71,7 +71,7 @@ h1::after {
     text-align: left;
   }
 
-  h1::after {
+  .bar::after {
     margin-left: 0px;
     margin-right: 0px;
   }

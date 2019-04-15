@@ -1,8 +1,8 @@
 <template>
   <div class="page">
-    <topnav :data="data.nav" :height="navHeight" trigger="highlights" />
+    <topnav :data="data.nav" :height="navHeight" trigger="skills" />
     <introduction :data="data.sections.introduction" :style="style" />
-    <highlights :data="data.sections.highlights" :style="style" />
+    <skills :data="data.sections.skills" :style="style" />
     <videos :data="data.sections.videos" :style="style" />
     <contact :data="data.sections.contact" :style="style" />
   </div>
@@ -12,7 +12,7 @@
 import sectionData from '@/content/sections'
 import topnav from '@/components/Nav'
 import introduction from '@/components/Introduction'
-import highlights from '@/components/Highlights'
+import skills from '@/components/Skills'
 import videos from '@/components/Videos'
 import contact from '@/components/Contact'
 export default {
@@ -20,7 +20,7 @@ export default {
     topnav,
     introduction,
     videos,
-    highlights,
+    skills,
     contact
   },
   data() {
@@ -37,7 +37,7 @@ export default {
       data.sections = sectionData
       data.nav = [
         sectionData.introduction,
-        sectionData.highlights,
+        sectionData.skills,
         sectionData.videos,
         sectionData.contact
       ]

@@ -38,9 +38,13 @@ collections:
               config:
                 multiple: false
       - label: 'Key Skills'
-        name: 'keySkills'
-        file: 'content/keySkills.json'
+        name: 'skills'
+        file: 'content/skills.json'
         fields:
+          - label: 'Id'
+            name: 'id'
+            widget: 'hidden'
+            default: 'skills'
           - label: 'Description'
             name: 'description'
             widget: 'text'

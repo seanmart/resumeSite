@@ -96,11 +96,11 @@ p {
 }
 
 .fade-on {
-  animation: fadeon 2s;
+  animation: fadeon 0.5s;
 }
 
 .slide-up {
-  animation: slideup 2s;
+  animation: slideup 0.5s;
 }
 
 @keyframes slideup {

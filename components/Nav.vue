@@ -89,8 +89,7 @@ export default {
         duration: 1000,
         onStart: () => this.onStart(index),
         onDone: this.onDone,
-        easing: 'ease',
-        offset: 0 - this.page.navHeight
+        easing: 'ease'
       }
     }
   }

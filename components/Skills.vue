@@ -36,4 +36,10 @@ export default {
     flex: 0 0 50%;
   }
 }
+
+@media screen and (min-width: 1000px) {
+  .skill {
+    flex: 0 0 33.333%;
+  }
+}
 </style>

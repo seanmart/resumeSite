@@ -124,6 +124,7 @@ export default {
 
 <style lang="css" scoped>
 header {
+  z-index: 100;
   position: fixed;
   top: 0px;
   left: 0px;

@@ -40,7 +40,6 @@ export default {
 
 <style scoped>
 section {
-  min-height: 100vh;
   display: flex;
   flex-direction: column;
 }
@@ -51,6 +50,7 @@ section {
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  min-height: 100vh;
 }
 
 .text {
@@ -87,9 +87,14 @@ section {
 }
 
 @media screen and (orientation: landscape) and (min-width: 800px) {
+  section {
+    min-height: 100vh;
+  }
+
   .container {
     flex-direction: row;
     padding-bottom: 0px;
+    min-height: auto;
   }
 
   .text {

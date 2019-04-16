@@ -118,7 +118,7 @@ section {
 @media screen and (orientation: landscape) and (min-width: 800px) and (min-height: 900px) {
   section {
     min-height: auto;
-    height: 900px;
+    height: 800px;
   }
 }
 </style>

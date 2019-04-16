@@ -67,9 +67,8 @@ section {
 @media screen and (orientation: landscape) and (min-width: 800px) {
   section {
     flex-direction: row;
+    min-height: 100vh;
     max-height: 1000px;
-    height: 100vh;
-    min-height: 550px;
     padding-bottom: 0px;
   }
 

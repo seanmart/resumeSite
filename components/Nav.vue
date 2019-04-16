@@ -98,14 +98,22 @@ export default {
 
 <style lang="css" scoped>
 nav{
-  position: absolute;
+  position: fixed;
   top: 0px;
   left: 0px;
   right: 0px;
 }
 
-nav.sticky{
-  position: fixed;
+.sticky .nav-wrapper,
+.open .nav-wrapper{
+  -webkit-backdrop-filter: blur(3px);
+  backdrop-filter: blur(3px);
+  background: rgba(255,255,255,.9);
+  box-shadow: 0px 0px 3px rgba(0,0,0,.15)
+}
+
+.nav-wrapper{
+  transition: background .25s, box-shadow .5s;
 }
 
 .nav-items{
@@ -152,28 +160,23 @@ nav.sticky{
   }
 
   .nav-wrapper{
-    background: white;
     border-radius: 5px;
-    box-shadow: 0px 0px 3px rgba(0,0,0,.15);
     display: inline-block;
     max-height: 42px;
     width: 42px;
     overflow: hidden;
+    background: white;
   }
 
   .open .nav-wrapper{
     width: 100%;
-    max-height: 100vh;
+    max-height: 500px;
+    background: white;
   }
 
   .transition .nav-wrapper{
-    transition: width .32s, max-height .25s
+    transition: width .25s, max-height .25s, box-shadow .25s
   }
-
-  .transition.open .nav-wrapper{
-    transition: width .25s, max-height .6s
-  }
-
 
   .nav-items{
     width: 100%;
@@ -182,12 +185,12 @@ nav.sticky{
     opacity: 0
   }
 
-  .transition.open .nav-items{
-    transition: transform .25s, opacity .7s
+  .transition .nav-items{
+    transition: transform .25s, opacity .2s
   }
 
-  .transition .nav-items{
-    transition: transform .25s, opacity .1s
+  .transition.open .nav-items{
+    transition: transform .25s, opacity .7s
   }
 
   .open .nav-items{
@@ -208,19 +211,8 @@ nav.sticky{
 
 @media screen and (min-width: 601px) {
 
-  .nav-wrapper{
-    transition: background .25s, box-shadow .5s;
-  }
-
   .menu-button{
     display: none;
-  }
-
-  .sticky .nav-wrapper{
-    -webkit-backdrop-filter: blur(3px);
-    backdrop-filter: blur(3px);
-    background: rgba(255,255,255,.9);
-    box-shadow: 0px 2px 2px rgba(0,0,0,.1)
   }
 
   .nav-items{

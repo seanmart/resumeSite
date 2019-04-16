@@ -3,7 +3,10 @@
     <h1>{{ data.sectionName }}</h1>
     <div class="container">
       <template v-for="skill in data.skills">
-        <div class="skill"></div>
+        <div class="skill">
+          <h2>{{ skill.title }}</h2>
+          <p>{{ skill.description }}</p>
+        </div>
       </template>
     </div>
   </section>
@@ -16,7 +19,18 @@ export default {
 </script>
 
 <style scoped>
-section {
-  height: 400px;
+.container {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  margin: 0px -20px;
+}
+
+.skill {
+  flex: 0 0 33.333%;
+  padding: 20px;
+}
+
+@media screen and (min-width: 600px) {
 }
 </style>

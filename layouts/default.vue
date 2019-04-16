@@ -35,7 +35,7 @@ html {
 
 /*--- global styles ---*/
 .padding {
-  padding: 7vw 10vw;
+  padding: 8vw 10vw;
 }
 
 .site-width {

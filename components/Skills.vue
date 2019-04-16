@@ -1,8 +1,8 @@
 <template lang="html">
-  <section :id="data.id" class="padding sides bottom">
-    <h1 class="padding top bottom">{{ data.sectionName }}</h1>
+  <section :id="skills.id" class="padding sides bottom">
+    <h1 class="padding top bottom">{{ skills.sectionName }}</h1>
     <div class="container">
-      <template v-for="skill in data.skills">
+      <template v-for="skill in skills.skills">
         <div class="skill">
           <h2>{{ skill.title }}</h2>
           <p>{{ skill.description }}</p>
@@ -14,7 +14,12 @@
 
 <script>
 export default {
-  props: ['data']
+  props: ['data'],
+  computed: {
+    skills() {
+      return this.data.skills
+    }
+  }
 }
 </script>
 

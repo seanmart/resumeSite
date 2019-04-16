@@ -49,10 +49,10 @@ collections:
             name: 'features'
             widget: 'list'
             fields:
-              - label: 'Image'
+              - label: 'Image (option 1)'
                 name: 'image'
                 widget: 'image'
-              - label: 'File (optional)'
+              - label: 'File (option 2)'
                 name: 'file'
                 widget: 'file'
               - label: 'Link'

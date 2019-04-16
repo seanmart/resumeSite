@@ -1,10 +1,10 @@
 <template lang="html">
-  <section :id="data.id">
+  <section :id="intro.id">
     <div class="container padding all">
       <div class="image" :style="img" />
       <div class="text slide-up">
-        <h1>{{ data.name }}</h1>
-        <h2 class="bar">{{ data.position }}</h2>
+        <h1>{{ intro.name }}</h1>
+        <h2 class="bar">{{ intro.position }}</h2>
         <template v-for="d in description">
           <p>{{ d }}</p>
         </template>
@@ -26,10 +26,16 @@ export default {
   components: { btn },
   computed: {
     img() {
-      return { backgroundImage: `url(${this.data.photo})` }
+      return { backgroundImage: `url(${this.intro.photo})` }
     },
     description() {
-      return this.data.description.split('\n')
+      return this.intro.description.split('\n')
+    },
+    intro() {
+      return this.data.introduction
+    },
+    features() {
+      return this.features
     }
   }
 }
@@ -102,7 +108,7 @@ section {
   section {
     min-height: 700px;
     height: 100vh;
-    max-height: 800px;
+    max-height: 75vw;
   }
 
   .container {
@@ -131,7 +137,7 @@ section {
     height: auto;
     width: auto;
     max-height: 100%;
-    max-width: 100%;
+    max-width: 600px;
   }
 
   .bar::after {

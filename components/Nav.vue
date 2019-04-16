@@ -222,7 +222,8 @@ a.active{
   }
 
   a{
-    opacity: 0
+    opacity: 0;
+    font-size: 1.1em;
   }
 
   .open a{

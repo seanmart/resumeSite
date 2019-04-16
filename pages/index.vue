@@ -2,7 +2,7 @@
   <div class="page site-width fade-on">
     <topnav :data="sections" :page="page" />
     <template v-for="section in sections">
-      <component :is="section.id" :data="{ ...section, page }" />
+      <component :is="section.id" :data="data" />
     </template>
   </div>
 </template>
@@ -31,6 +31,9 @@ export default {
     }
   },
   computed: {
+    data() {
+      return sectionData
+    },
     sections() {
       return orderBy(values(sectionData), 'order')
     }

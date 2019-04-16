@@ -1,8 +1,8 @@
 <template lang="html">
-  <section :id="data.id" class="padding bottom sides">
-    <h1 class="padding top bottom">{{ data.sectionName }}</h1>
+  <section :id="videos.id" class="padding bottom sides">
+    <h1 class="padding top bottom">{{ videos.sectionName }}</h1>
     <div class="container">
-      <template v-for="video in videos">
+      <template v-for="video in videos.videos">
         <div class="video">
           <div class="inner-video"></div>
         </div>
@@ -16,7 +16,10 @@ export default {
   props: ['data'],
   computed: {
     videos() {
-      return ['video1', 'video2', 'video1', 'video2', 'video1', 'video2']
+      return {
+        ...this.data.videos,
+        videos: ['video1', 'video2', 'video1', 'video2', 'video1', 'video2']
+      }
     }
   }
 }

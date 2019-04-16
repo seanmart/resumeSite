@@ -1,12 +1,17 @@
 <template lang="html">
-  <section :id="data.id" class="padding bottom sides">
-    <h1 class="padding top bottom">{{ data.sectionName }}</h1>
+  <section :id="contact.id" class="padding bottom sides">
+    <h1 class="padding top bottom">{{ contact.sectionName }}</h1>
   </section>
 </template>
 
 <script>
 export default {
-  props: ['data']
+  props: ['data'],
+  computed: {
+    contact() {
+      return this.data.contact
+    }
+  }
 }
 </script>
 

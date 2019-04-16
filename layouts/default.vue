@@ -28,17 +28,16 @@ html {
   margin: 0;
 }
 
+* {
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+  -moz-tap-highlight-color: rgba(0, 0, 0, 0);
+}
+
 /*--- global styles ---*/
 
 section {
   border-bottom: 1px solid #eee;
   padding: 10vw;
-}
-
-.site-width {
-  display: block;
-  max-width: 1500px;
-  margin: 0px auto;
 }
 
 h1,

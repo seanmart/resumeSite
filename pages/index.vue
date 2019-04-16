@@ -1,5 +1,5 @@
 <template>
-  <div class="page site-width">
+  <div class="page" :style="style('page')">
     <topnav :data="sections" :page="page" />
     <template v-for="section in sections">
       <component :is="section.id" :data="{ ...section, page }" />
@@ -26,7 +26,8 @@ export default {
   data() {
     return {
       page: {
-        navHeight: 80
+        navHeight: 80,
+        siteWidth: 1400
       }
     }
   },
@@ -34,11 +35,20 @@ export default {
     sections() {
       return orderBy(values(sectionData), 'order')
     }
+  },
+  methods: {
+    style(el) {
+      switch (el) {
+        case 'page':
+          return { maxWidth: `${this.page.siteWidth}px` }
+      }
+    }
   }
 }
 </script>
-<style>
+<style lang="css" scoped>
 .page {
   background: #fff;
+  margin: 0px auto;
 }
 </style>

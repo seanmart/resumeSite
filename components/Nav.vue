@@ -1,95 +1,118 @@
 <template lang="html">
-  <nav :class="{ sticky, open, transition }">
-    <div class="nav-wrapper site-width">
-      <div class="menu-button" @click="setMenu(!open)">
-        <div class="line" />
-        <div class="line" />
-        <div class="line" />
-      </div>
-      <div class="nav-items">
-        <template v-for="(section, index) in data">
+  <header :class="{ scrolled, open, transition }">
+    <nav :style="mobileMenuHeight">
+      <ul>
+        <li class="menu" @click="set('menu')">
+          <div />
+          <div />
+          <div />
+        </li>
+        <li v-for="(section, index) in data">
           <a
-            class="nav-item"
             href="#"
-            v-scroll-to="props(section.id, index)"
-            @click="setMenu(false)"
-            :class="{ active: index === activeSection }"
-            :style="{ height }"
+            v-scroll-to="set('v-scroll', section.id)"
+            @click="set('a', index)"
+            :class="{ active: is('a', index) }"
+            :style="{ height: navHeight }"
           >
             {{ section.sectionName }}
           </a>
-        </template>
-      </div>
-    </div>
-  </nav>
+        </li>
+      </ul>
+    </nav>
+  </header>
 </template>
 
 <script>
 export default {
   data() {
     return {
-      sticky: false,
-      pause: false,
-      activeSection: 0,
+      scrolled: true,
       open: false,
-      transition: false
+      active: 0,
+      mobile: false,
+      transition: false,
+      cancelSetActive: false
     }
   },
-  props: {
-    data: Array,
-    page: Object
+  props: ['data', 'page'],
+  mounted() {
+    window.addEventListener('resize', this.handleResize)
+    window.addEventListener('scroll', this.handleScroll)
+    this.handleResize()
+    this.handleScroll()
+  },
+  destroyed() {
+    window.removeEventListener('resize', this.handleResize)
+    window.removeEventListener('scroll', this.handleScroll)
   },
   computed: {
-    height() {
+    mobileMenuHeight() {
+      if (!this.mobile || !this.open) return {}
+      return { height: `${this.data.length * this.page.navHeight + 15}px` }
+    },
+    navHeight() {
       return `${this.page.navHeight}px`
     },
     elements() {
       return this.data.map(s => document.getElementById(s.id))
     }
   },
-  mounted() {
-    window.addEventListener('scroll', this.onScroll)
-  },
-  destroyed() {
-    window.removeEventListener('scroll', this.onScroll)
-  },
-  methods: {
-    setMenu(state) {
+  watch: {
+    open() {
       this.transition = true
       setTimeout(() => (this.transition = false), 500)
-      this.open = state
+    }
+  },
+  methods: {
+    start() {
+      this.cancelSetActive = true
     },
-    onScroll() {
-      this.checkSticky()
-      if (!this.pause) this.checkActiveSection()
+    done() {
+      this.cancelSetActive = false
     },
-    onStart(index) {
-      this.activeSection = index
-      this.pause = true
-      if (index > 0) this.sticky = true
+    handleResize() {
+      this.mobile = window.innerWidth <= 600
     },
-    onDone() {
-      this.pause = false
+    handleScroll() {
+      this.checkScroll()
+      !this.cancelSetActive && this.checkActive()
     },
-    checkSticky() {
-      this.sticky = window.scrollY > 0
+    checkScroll() {
+      this.scrolled = window.scrollY > 0
     },
-    checkActiveSection() {
+    checkActive() {
       this.elements.some((el, index) => {
         if (el.getBoundingClientRect().bottom > this.page.navHeight) {
-          this.activeSection = index
+          this.active = index
           return true
         }
         return false
       })
     },
-    props(id, index) {
-      return {
-        el: `#${id}`,
-        duration: 1000,
-        onStart: () => this.onStart(index),
-        onDone: this.onDone,
-        easing: 'ease'
+    is(caller, val) {
+      switch (caller) {
+        case 'a':
+          return val === this.active
+      }
+    },
+    set(caller, val) {
+      switch (caller) {
+        case 'a':
+          this.active = val
+          this.open = false
+          break
+        case 'v-scroll':
+          return {
+            el: `#${val}`,
+            duration: 1000,
+            easing: 'ease',
+            onStart: this.start,
+            onDone: this.done
+          }
+        case 'menu':
+          this.open = !this.open
+          break
       }
     }
   }
@@ -97,132 +120,128 @@ export default {
 </script>
 
 <style lang="css" scoped>
-nav{
+header {
   position: fixed;
   top: 0px;
   left: 0px;
   right: 0px;
 }
 
-.sticky .nav-wrapper,
-.open .nav-wrapper{
+nav {
+  margin: 0px auto;
+  position: relative;
+  overflow: hidden;
+  background: rgba(255, 255, 255, 0.95);
   -webkit-backdrop-filter: blur(3px);
   backdrop-filter: blur(3px);
-  background: rgba(255,255,255,.9);
+}
+
+.open nav, .scrolled nav{
   box-shadow: 0px 0px 3px rgba(0,0,0,.15)
 }
 
-.nav-wrapper{
-  transition: background .25s, box-shadow .5s;
-}
-
-.nav-items{
+ul {
   display: flex;
   flex-direction: column;
+  justify-content: flex-start;
+  align-items: stretch;
+  padding: 0px;
 }
 
-.nav-item{
+li {
   flex: 0 0 auto;
+  list-style: none
+}
+
+a{
+  text-decoration: none;
+  color: #999;
   display: flex;
   justify-content: center;
   align-items: center;
-  text-decoration: none;
-  color: #999;
-  font-size: 1em;
-  font-weight: 500
+  padding: 0px 20px;
 }
 
-.nav-item.active{
+a.active{
   color: #222
 }
 
-.menu-button{
-  width: 42px;
-  height: 42px;
+.menu{
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  height: 46px;
+  width: 51px;
+  z-index: 1;
   display: flex;
   flex-direction: column;
-  justify-content: center;
-  align-items: center;
+  justify-content: space-between;
+  align-items: stretch;
 }
 
-.line{
-  height: 2px;
-  width: 22px;
-  background: #999;
-  margin: 2px 0px;
+.menu div{
   flex: 0 0 auto;
+  background: #999;
+  height: 2px;
 }
 
 @media screen and (max-width:600px){
+  header{
+    margin: 10px;
+  }
+
+  nav, .menu{
+    padding: 15px
+  }
 
   nav{
-    padding: 15px;
+    margin: 0px;
+    border-radius: 3px;
+    height:46px;
+    width: 51px;
   }
 
-  .nav-wrapper{
-    border-radius: 5px;
-    display: inline-block;
-    max-height: 42px;
-    width: 42px;
-    overflow: hidden;
+  .open nav{
     background: white;
-  }
-
-  .open .nav-wrapper{
     width: 100%;
-    max-height: 500px;
-    background: white;
   }
 
-  .transition .nav-wrapper{
-    transition: width .25s, max-height .25s, box-shadow .25s
+  .transition ul, .transition nav,.transition.open a{
+    transition: .5s
   }
 
-  .nav-items{
-    width: 100%;
-    transform: scale(0);
-    transform-origin: top left;
+  .transition a{
+    transition: .25s
+  }
+
+  a{
     opacity: 0
   }
 
-  .transition .nav-items{
-    transition: transform .25s, opacity .2s
-  }
-
-  .transition.open .nav-items{
-    transition: transform .25s, opacity .7s
-  }
-
-  .open .nav-items{
-    transform: scale(1);
+  .open a{
     opacity: 1
   }
 
-  .nav-items .nav-item{
-    height: 70px;
+  li{
+    display: block;
+  }
+
+  li a{
     border-bottom: 1px solid #eee;
   }
 
-  .nav-item:last-child{
-    border-bottom: 0px;
+  li:last-child a{
+    border-bottom: none;
   }
 
 }
 
-@media screen and (min-width: 601px) {
+@media screen and (min-width: 601px){
+  .menu{display:none;}
 
-  .menu-button{
-    display: none;
-  }
-
-  .nav-items{
+  ul{
     flex-direction: row;
     justify-content: center;
-    height: 100%;
-  }
-
-  .nav-item{
-    padding: 0px 20px;
   }
 }
 </style>

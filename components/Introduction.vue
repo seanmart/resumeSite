@@ -65,7 +65,7 @@ section {
 }
 
 .link {
-  margin-top: 30px;
+  margin-top: 40px;
   text-align: center;
 }
 

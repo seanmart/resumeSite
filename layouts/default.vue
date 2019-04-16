@@ -90,7 +90,7 @@ p {
 
 @media screen and (min-width: 1400px) {
   .padding {
-    padding: 142px;
+    padding: 100px 142px;
   }
 
   .padding.sides {

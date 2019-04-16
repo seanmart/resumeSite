@@ -31,7 +31,14 @@ export default {
   padding: 20px;
 }
 
+h1 {
+  padding: 10px 0px 20px;
+}
+
 @media screen and (min-width: 800px) {
+  h1 {
+    padding-top: 0px;
+  }
   .skill {
     flex: 0 0 50%;
   }

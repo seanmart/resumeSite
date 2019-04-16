@@ -1,15 +1,23 @@
 <template lang="html">
-  <section :id="data.id" :style="{ paddingTop: `${data.page.navHeight}px` }">
-    <div class="image fade-on" :style="img" />
-    <div class="text slide-up">
-      <h1>{{ data.name }}</h1>
-      <h2 class="bar">{{ data.position }}</h2>
-      <template v-for="d in description">
-        <p>{{ d }}</p>
-      </template>
-      <div class="link">
-        <btn>View Story</btn>
+  <section :id="data.id">
+    <div
+      class="container padding"
+      :style="{ paddingTop: `${data.page.navHeight}px` }"
+    >
+      <div class="image fade-on" :style="img" />
+      <div class="text slide-up">
+        <h1>{{ data.name }}</h1>
+        <h2 class="bar">{{ data.position }}</h2>
+        <template v-for="d in description">
+          <p>{{ d }}</p>
+        </template>
+        <div class="link">
+          <btn>View Story</btn>
+        </div>
       </div>
+    </div>
+    <div class="featured padding sides">
+      <h1>Featured In</h1>
     </div>
   </section>
 </template>
@@ -35,9 +43,14 @@ section {
   min-height: 100vh;
   display: flex;
   flex-direction: column;
+}
+
+.container {
+  flex: 1 1 auto;
+  display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
-  background: #fff;
 }
 
 .text {
@@ -64,11 +77,17 @@ section {
   box-shadow: 0px 2px 7px rgba(0, 0, 0, 0.1);
 }
 
+.featured {
+  flex: 0 0 auto;
+  width: 100%;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  background: #333;
+}
+
 @media screen and (orientation: landscape) and (min-width: 800px) {
-  section {
+  .container {
     flex-direction: row;
-    min-height: 100vh;
-    max-height: 1000px;
     padding-bottom: 0px;
   }
 
@@ -92,6 +111,13 @@ section {
     width: auto;
     max-height: 100%;
     max-width: 100%;
+  }
+}
+
+@media screen and (orientation: landscape) and (min-width: 800px) and (min-height: 900px) {
+  section {
+    min-height: auto;
+    height: 900px;
   }
 }
 </style>

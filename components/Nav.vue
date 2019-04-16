@@ -32,7 +32,8 @@ export default {
       active: 0,
       mobile: false,
       transition: false,
-      cancelSetActive: false
+      cancelSetActive: false,
+      offset: 0
     }
   },
   props: ['data', 'page'],
@@ -48,7 +49,8 @@ export default {
   },
   computed: {
     mobileMenuHeight() {
-      if (!this.mobile || !this.open) return {}
+      if (!this.mobile || !this.open)
+        return { maxWidth: `${this.page.siteWidth}px` }
       return { height: `${this.data.length * this.page.navHeight}px` }
     },
     navHeight() {
@@ -73,6 +75,7 @@ export default {
     },
     handleResize() {
       this.mobile = window.innerWidth <= 600
+      this.offset = window.innerWidth <= 600 ? 0 : 0 - this.page.navHeight
     },
     handleScroll() {
       this.checkScroll()
@@ -89,6 +92,10 @@ export default {
         }
         return false
       })
+    },
+    style(caller) {
+      switch (caller) {
+      }
     },
     is(caller, val) {
       switch (caller) {
@@ -108,7 +115,8 @@ export default {
             duration: 1000,
             easing: 'ease',
             onStart: this.start,
-            onDone: this.done
+            onDone: this.done,
+            offset: this.offset
           }
         case 'menu':
           this.open = !this.open

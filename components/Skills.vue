@@ -1,5 +1,5 @@
 <template lang="html">
-  <section :id="data.id">
+  <section :id="data.id" class="padding">
     <h1>{{ data.sectionName }}</h1>
   </section>
 </template>

@@ -18,7 +18,7 @@ html {
   -moz-osx-font-smoothing: grayscale;
   -webkit-font-smoothing: antialiased;
   box-sizing: border-box;
-  background: #fff;
+  background: #fafafa;
 }
 
 *,
@@ -34,10 +34,12 @@ html {
 }
 
 /*--- global styles ---*/
-
-section {
-  border-bottom: 1px solid #eee;
+.padding {
   padding: 10vw;
+}
+
+.padding.sides {
+  padding: 0px 10vw;
 }
 
 h1,
@@ -91,6 +93,16 @@ p {
   .bar::after {
     margin-left: 0px;
     margin-right: 0px;
+  }
+}
+
+@media screen and (min-width: 2000px) {
+  .padding {
+    padding: 200px;
+  }
+
+  .padding.sides {
+    padding: 0px 200px;
   }
 }
 

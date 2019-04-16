@@ -35,11 +35,7 @@ html {
 
 /*--- global styles ---*/
 .padding {
-  padding: 10vw;
-}
-
-.padding.sides {
-  padding: 0px 10vw;
+  padding: 7vw 10vw;
 }
 
 .site-width {
@@ -50,25 +46,24 @@ h1,
 h2,
 h3 {
   font-family: 'Montserrat', sans-serif;
-  text-align: center;
   letter-spacing: -0.02em;
 }
 
 h1 {
   font-size: 2em;
-  font-weight: 500;
-  margin: 7px 0px;
+  font-weight: 600;
+  margin: 20px 0px;
   line-height: 0.8em;
 }
 
 h2 {
-  font-weight: 400;
+  font-weight: 500;
   font-size: 1.35em;
   margin: 5px 0px;
 }
 
 h3 {
-  font-weight: 500;
+  font-weight: 600;
   font-size: 0.8em;
 }
 
@@ -90,19 +85,6 @@ p {
 @media screen and (max-width: 600px) {
   h2 {
     font-size: 1.2em;
-  }
-}
-
-@media screen and (orientation: landscape) and (min-width: 800px) {
-  h1,
-  h2,
-  h3 {
-    text-align: left;
-  }
-
-  .bar::after {
-    margin-left: 0px;
-    margin-right: 0px;
   }
 }
 

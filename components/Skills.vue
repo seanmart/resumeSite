@@ -27,10 +27,13 @@ export default {
 }
 
 .skill {
-  flex: 0 0 33.333%;
+  flex: 0 0 100%;
   padding: 20px;
 }
 
-@media screen and (min-width: 600px) {
+@media screen and (min-width: 800px) {
+  .skill {
+    flex: 0 0 50%;
+  }
 }
 </style>

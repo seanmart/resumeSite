@@ -53,6 +53,15 @@ section {
 .text {
   flex: 0 0 auto;
   max-width: 500px;
+  text-align: center;
+}
+
+.text h1 {
+  margin: 7px 0px;
+}
+
+.text p {
+  text-align: left;
 }
 
 .link {
@@ -97,12 +106,14 @@ section {
   .container {
     flex-direction: row;
     padding-bottom: 0px;
+    padding-top: 10vw;
     min-height: auto;
   }
 
   .text {
     flex: 1 1 auto;
     margin: 40px 0px;
+    text-align: left;
   }
 
   .link {
@@ -120,6 +131,11 @@ section {
     width: auto;
     max-height: 100%;
     max-width: 100%;
+  }
+
+  .bar::after {
+    margin-left: 0px;
+    margin-right: 0px;
   }
 }
 

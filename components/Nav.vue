@@ -164,6 +164,7 @@ a{
   justify-content: center;
   align-items: center;
   padding: 0px 20px;
+  font-weight: 500;
 }
 
 a.active{

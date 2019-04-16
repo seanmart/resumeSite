@@ -32,7 +32,7 @@ html {
 
 section {
   border-bottom: 1px solid #eee;
-  padding: 80px;
+  padding: 10vw;
 }
 
 .site-width {
@@ -69,7 +69,7 @@ h3 {
 
 p {
   margin: 15px 0px;
-  font-size: 1em;
+  font-size: 0.9em;
   line-height: 1.45em;
 }
 

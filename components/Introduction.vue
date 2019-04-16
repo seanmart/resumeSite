@@ -69,7 +69,7 @@ section {
     flex-direction: row;
     max-height: 1000px;
     height: 100vh;
-    min-height: 500px;
+    min-height: 550px;
     padding-bottom: 0px;
   }
 

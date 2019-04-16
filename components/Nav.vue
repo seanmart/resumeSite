@@ -49,7 +49,7 @@ export default {
   computed: {
     mobileMenuHeight() {
       if (!this.mobile || !this.open) return {}
-      return { height: `${this.data.length * this.page.navHeight + 15}px` }
+      return { height: `${this.data.length * this.page.navHeight}px` }
     },
     navHeight() {
       return `${this.page.navHeight}px`
@@ -136,7 +136,7 @@ nav {
   backdrop-filter: blur(3px);
 }
 
-.open nav, .scrolled nav{
+.scrolled nav{
   box-shadow: 0px 0px 3px rgba(0,0,0,.15)
 }
 
@@ -190,7 +190,7 @@ a.active{
     margin: 10px;
   }
 
-  nav, .menu{
+  .menu{
     padding: 15px
   }
 
@@ -199,11 +199,13 @@ a.active{
     border-radius: 3px;
     height:46px;
     width: 51px;
+    padding: 0px 15px;
   }
 
   .open nav{
     background: white;
     width: 100%;
+    box-shadow: 0px 0px 5px rgba(0,0,0,.25)
   }
 
   .transition ul, .transition nav,.transition.open a{

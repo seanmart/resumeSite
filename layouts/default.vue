@@ -33,14 +33,56 @@ html {
   -moz-tap-highlight-color: rgba(0, 0, 0, 0);
 }
 
-/*--- global styles ---*/
-.padding {
-  padding: 8vw 10vw;
-}
+/*--- global sizes ---*/
 
 .site-width {
   max-width: 1400px;
 }
+
+.bar::after {
+  content: '';
+  display: block;
+  width: 50px;
+  height: 5px;
+  background: #ddd;
+  margin: 40px auto;
+}
+
+.padding.all,
+.padding.top {
+  padding-top: 12vw;
+}
+
+.padding.all,
+.padding.bottom {
+  padding-bottom: 12vw;
+}
+
+.padding.all,
+.padding.sides {
+  padding-left: 12vw;
+  padding-right: 12vw;
+}
+
+@media screen and (min-width: 670px) {
+  .padding.all,
+  .padding.top {
+    padding-top: 80px;
+  }
+
+  .padding.all,
+  .padding.bottom {
+    padding-bottom: 80px;
+  }
+
+  .padding.all,
+  .padding.sides {
+    padding-left: 80px;
+    padding-right: 80px;
+  }
+}
+
+/* ------- global font -------*/
 
 h1,
 h2,
@@ -52,7 +94,6 @@ h3 {
 h1 {
   font-size: 2em;
   font-weight: 600;
-  margin: 20px 0px;
   line-height: 0.8em;
 }
 
@@ -73,30 +114,13 @@ p {
   line-height: 1.45em;
 }
 
-.bar::after {
-  content: '';
-  display: block;
-  width: 50px;
-  height: 5px;
-  background: #ddd;
-  margin: 40px auto;
-}
-
 @media screen and (max-width: 600px) {
   h2 {
     font-size: 1.2em;
   }
 }
 
-@media screen and (min-width: 1400px) {
-  .padding {
-    padding: 100px 142px;
-  }
-
-  .padding.sides {
-    padding: 0px 142px;
-  }
-}
+/* ------- global animations -------*/
 
 .fade-on {
   animation: fadeon 1s;

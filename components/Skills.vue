@@ -1,6 +1,6 @@
 <template lang="html">
-  <section :id="data.id" class="padding">
-    <h1>{{ data.sectionName }}</h1>
+  <section :id="data.id" class="padding sides bottom">
+    <h1 class="padding top bottom">{{ data.sectionName }}</h1>
     <div class="container">
       <template v-for="skill in data.skills">
         <div class="skill">
@@ -28,17 +28,10 @@ export default {
 
 .skill {
   flex: 0 0 100%;
-  padding: 20px;
-}
-
-h1 {
-  padding: 10px 0px 20px;
+  padding: 0px 20px 40px;
 }
 
 @media screen and (min-width: 800px) {
-  h1 {
-    padding-top: 0px;
-  }
   .skill {
     flex: 0 0 50%;
   }

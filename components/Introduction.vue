@@ -1,6 +1,6 @@
 <template lang="html">
   <section :id="data.id">
-    <div class="container padding">
+    <div class="container padding all">
       <div class="image" :style="img" />
       <div class="text slide-up">
         <h1>{{ data.name }}</h1>
@@ -86,27 +86,28 @@ section {
 .featured {
   flex: 0 0 auto;
   width: 100%;
-  padding-top: 20px;
-  padding-bottom: 20px;
   background: #222;
   color: white;
+  padding-top: 30px;
+  padding-bottom: 30px;
 }
 
 @media screen and (min-width: 601px) {
   .image {
-    margin-top: 20px;
+    margin-top: 40px;
   }
 }
 
-@media screen and (orientation: landscape) and (min-width: 800px) {
+@media screen and (min-width: 1000px) {
   section {
-    min-height: 100vh;
+    min-height: 700px;
+    height: 100vh;
+    max-height: 800px;
   }
 
   .container {
     flex-direction: row;
     padding-bottom: 0px;
-    padding-top: 10vw;
     min-height: auto;
   }
 
@@ -139,10 +140,10 @@ section {
   }
 }
 
-@media screen and (orientation: landscape) and (min-width: 800px) and (min-height: 800px) {
+@media screen and (min-width: 1200px) {
   section {
-    min-height: auto;
-    height: 800px;
+    min-height: 600px;
+    max-height: 900px;
   }
 }
 </style>

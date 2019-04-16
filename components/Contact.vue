@@ -1,6 +1,6 @@
 <template lang="html">
-  <section :id="data.id" class="padding">
-    <h1>{{ data.sectionName }}</h1>
+  <section :id="data.id" class="padding bottom sides">
+    <h1 class="padding top bottom">{{ data.sectionName }}</h1>
   </section>
 </template>
 

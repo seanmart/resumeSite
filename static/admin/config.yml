@@ -54,7 +54,7 @@ collections:
             widget: 'hidden'
             default: 'skills'
           - label: 'Skills'
-            name: 'skill'
+            name: 'skills'
             widget: 'list'
             fields:
               - label: 'Title'

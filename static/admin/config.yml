@@ -41,6 +41,23 @@ collections:
             media_library:
               config:
                 multiple: false
+      - label: 'Featured In'
+        name: 'featuredIn'
+        file: 'content/features.json'
+        fields:
+          - label: 'Feature List'
+            name: 'features'
+            widget: 'list'
+            fields:
+              - label: 'Image'
+                name: 'image'
+                widget: 'image'
+              - label: 'File (optional)'
+                name: 'file'
+                widget: 'file'
+              - label: 'Link'
+                name: 'link'
+                widget: 'string'
       - label: 'Key Skills'
         name: 'skills'
         file: 'content/skills.json'

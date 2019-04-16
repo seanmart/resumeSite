@@ -1,5 +1,10 @@
 {
-  "id": "skills",
   "order": 1,
-  "sectionName": "Key Skills"
+  "id": "skills",
+  "skill": [
+    {
+      "title": "Ability to anticipate and navigate challenges",
+      "description": "Led the turnaround and business transformation of company, driving significant year-over-year bottom and top-line growth. "
+    }
+  ]
 }

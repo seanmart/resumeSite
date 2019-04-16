@@ -1,6 +1,6 @@
 <template lang="html">
   <header :class="{ scrolled, open, transition }">
-    <nav :style="mobileMenuHeight">
+    <nav class="site-width" :style="mobileMenuHeight">
       <ul>
         <li class="menu" @click="set('menu')">
           <div />
@@ -27,7 +27,7 @@
 export default {
   data() {
     return {
-      scrolled: true,
+      scrolled: false,
       open: false,
       active: 0,
       mobile: false,
@@ -49,8 +49,7 @@ export default {
   },
   computed: {
     mobileMenuHeight() {
-      if (!this.mobile || !this.open)
-        return { maxWidth: `${this.page.siteWidth}px` }
+      if (!this.mobile || !this.open) return {}
       return { height: `${this.data.length * this.page.navHeight}px` }
     },
     navHeight() {
@@ -92,10 +91,6 @@ export default {
         }
         return false
       })
-    },
-    style(caller) {
-      switch (caller) {
-      }
     },
     is(caller, val) {
       switch (caller) {

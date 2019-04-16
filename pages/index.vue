@@ -1,5 +1,5 @@
 <template>
-  <div class="page" :style="style('page')">
+  <div class="page site-width fade-on">
     <topnav :data="sections" :page="page" />
     <template v-for="section in sections">
       <component :is="section.id" :data="{ ...section, page }" />
@@ -26,8 +26,7 @@ export default {
   data() {
     return {
       page: {
-        navHeight: 80,
-        siteWidth: 1400
+        navHeight: 80
       }
     }
   },
@@ -36,14 +35,7 @@ export default {
       return orderBy(values(sectionData), 'order')
     }
   },
-  methods: {
-    style(el) {
-      switch (el) {
-        case 'page':
-          return { maxWidth: `${this.page.siteWidth}px` }
-      }
-    }
-  }
+  methods: {}
 }
 </script>
 <style lang="css" scoped>

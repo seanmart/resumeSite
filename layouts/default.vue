@@ -42,6 +42,10 @@ html {
   padding: 0px 10vw;
 }
 
+.site-width {
+  max-width: 1400px;
+}
+
 h1,
 h2,
 h3 {
@@ -83,6 +87,12 @@ p {
   margin: 40px auto;
 }
 
+@media screen and (max-width: 600px) {
+  h2 {
+    font-size: 1.2em;
+  }
+}
+
 @media screen and (orientation: landscape) and (min-width: 800px) {
   h1,
   h2,
@@ -96,22 +106,22 @@ p {
   }
 }
 
-@media screen and (min-width: 2000px) {
+@media screen and (min-width: 1400px) {
   .padding {
-    padding: 200px;
+    padding: 142px;
   }
 
   .padding.sides {
-    padding: 0px 200px;
+    padding: 0px 142px;
   }
 }
 
 .fade-on {
-  animation: fadeon 0.5s;
+  animation: fadeon 1s;
 }
 
 .slide-up {
-  animation: slideup 0.5s;
+  animation: slideup 1s;
 }
 
 @keyframes slideup {

@@ -4,7 +4,7 @@
       class="container padding"
       :style="{ paddingTop: `${data.page.navHeight}px` }"
     >
-      <div class="image fade-on" :style="img" />
+      <div class="image" :style="img" />
       <div class="text slide-up">
         <h1>{{ data.name }}</h1>
         <h2 class="bar">{{ data.position }}</h2>
@@ -82,7 +82,8 @@ section {
   width: 100%;
   padding-top: 20px;
   padding-bottom: 20px;
-  background: #333;
+  background: #222;
+  color: white;
 }
 
 @media screen and (orientation: landscape) and (min-width: 800px) {

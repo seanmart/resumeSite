@@ -74,8 +74,8 @@ export default {
 
 .button{
   position: absolute;
-  top: 30px;
-  left: 30px;
+  top: 5vw;
+  left: 5vw;
   transition: transform .25s;
   width: 50px;
   padding: 10px;
@@ -99,6 +99,11 @@ export default {
 @media screen and (min-width: 800px){
   .video-container{
     width: 85vw;
+  }
+
+  .button{
+    top: 40px;
+    left: 40px;
   }
 }
 </style>

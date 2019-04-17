@@ -4,6 +4,7 @@
     <template v-for="section in sections">
       <component :is="section.component" :data="section" />
     </template>
+    <modal />
   </div>
 </template>
 
@@ -15,6 +16,7 @@ import news from '@/components/News'
 import skills from '@/components/Skills'
 import videos from '@/components/Videos'
 import contact from '@/components/Contact'
+import modal from '@/components/Modal'
 import { orderBy, values } from 'lodash'
 export default {
   components: {
@@ -23,7 +25,8 @@ export default {
     news,
     videos,
     skills,
-    contact
+    contact,
+    modal
   },
   data() {
     return {

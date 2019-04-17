@@ -131,7 +131,7 @@ export default {
 
 <style lang="css" scoped>
 header {
-  z-index: 100;
+  z-index: 2;
   position: fixed;
   top: 0px;
   left: 0px;
@@ -200,7 +200,7 @@ a.active{
 
 @media screen and (max-width:600px){
   header{
-    margin: 10px;
+    margin: 5vw;
   }
 
   .menu{

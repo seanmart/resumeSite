@@ -3,8 +3,8 @@
     <h1 class="padding top bottom">{{ data.sectionName }}</h1>
     <div class="container">
       <template v-for="video in data.list">
-        <div class="video">
-          <div class="inner-video"></div>
+        <div class="video" @click="selectVideo(video)">
+          <div class="video-ratio"></div>
         </div>
       </template>
     </div>
@@ -13,7 +13,12 @@
 
 <script>
 export default {
-  props: ['data']
+  props: ['data'],
+  methods: {
+    selectVideo(video) {
+      this.$store.commit('setModal', { type: 'video', link: video })
+    }
+  }
 }
 </script>
 
@@ -33,9 +38,7 @@ section {
   padding: 0px 10px 20px;
 }
 
-.inner-video {
-  position: relative;
-  padding-top: 56.25%;
+.video div {
   background: #ccc;
 }
 

@@ -83,7 +83,7 @@ section {
     flex-direction: row;
     align-items: stretch;
     padding-bottom: 0px;
-    min-height: 0px
+    min-height: 600px;
   }
 
   .text {

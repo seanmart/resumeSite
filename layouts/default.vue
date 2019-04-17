@@ -50,12 +50,12 @@ html {
 
 .padding.all,
 .padding.top {
-  padding-top: 80px;
+  padding-top: 85px;
 }
 
 .padding.all,
 .padding.bottom {
-  padding-bottom: 80px;
+  padding-bottom: 85px;
 }
 
 .padding.all,
@@ -64,11 +64,16 @@ html {
   padding-right: 5vw;
 }
 
+.video-ratio {
+  width: 100%;
+  padding-top: 56.25%;
+}
+
 @media screen and (min-width: 1500px) {
   .padding.all,
   .padding.sides {
-    padding-left: 80px;
-    padding-right: 80px;
+    padding-left: 85px;
+    padding-right: 85px;
   }
 }
 

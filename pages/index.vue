@@ -33,11 +33,8 @@ export default {
     }
   },
   computed: {
-    data() {
-      return sectionData
-    },
     sections() {
-      return orderBy(values(sectionData), 'order')
+      return sectionData
     }
   },
   methods: {}

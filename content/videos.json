@@ -1,5 +1,10 @@
 {
-  "id": "videos",
   "order": 2,
-  "sectionName": "Videos"
+  "id": "videos",
+  "sectionName": "Videos",
+  "list": [
+    {
+      "link": "video 1"
+    }
+  ]
 }

@@ -1,5 +1,6 @@
 {
   "id": "videos",
+  "component": "videos",
   "order": 2,
   "sectionName": "Videos"
 }

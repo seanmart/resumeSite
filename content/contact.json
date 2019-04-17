@@ -1,5 +1,6 @@
 {
   "id": "contact",
+  "component": "contact",
   "order": 3,
   "sectionName": "Contact"
 }

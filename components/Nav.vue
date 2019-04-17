@@ -71,10 +71,10 @@ export default {
       this.transition = true
       setTimeout(() => (this.transition = false), 500)
 
-      if (to) {
+      if (to && !from) {
         setTimeout(() => {
           window.addEventListener('click', this.handleClick)
-        }, 1)
+        }, 10)
       } else {
         window.removeEventListener('click', this.handleClick)
       }
@@ -88,7 +88,6 @@ export default {
       this.cancelSetActive = false
     },
     handleClick() {
-      console.log('this ran')
       this.open = false
     },
     handleResize() {

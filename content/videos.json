@@ -1,6 +1,15 @@
 {
+<<<<<<< HEAD
   "id": "videos",
   "component": "videos",
+=======
+>>>>>>> ce57a9976ab882ad4ddbef591851d10b08976744
   "order": 2,
-  "sectionName": "Videos"
+  "id": "videos",
+  "sectionName": "Videos",
+  "list": [
+    {
+      "link": "video 1"
+    }
+  ]
 }

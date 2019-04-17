@@ -14,11 +14,6 @@ collections:
         name: 'introduction'
         file: 'content/introduction.json'
         fields:
-          - label: 'Order'
-            name: 'order'
-            widget: 'hidden'
-            default: 0
-
           - label: 'Id'
             name: 'id'
             widget: 'hidden'
@@ -57,11 +52,6 @@ collections:
         name: 'news'
         file: 'content/news.json'
         fields:
-          - label: 'Order'
-            name: 'order'
-            widget: 'hidden'
-            default: 1
-
           - label: 'Component'
             name: 'component'
             widget: 'hidden'
@@ -76,12 +66,9 @@ collections:
             name: 'list'
             widget: 'list'
             fields:
-              - label: 'Image (option 1)'
+              - label: 'Image'
                 name: 'image'
                 widget: 'image'
-              - label: 'File (option 2)'
-                name: 'file'
-                widget: 'file'
               - label: 'Link'
                 name: 'link'
                 widget: 'string'
@@ -90,11 +77,6 @@ collections:
         name: 'skills'
         file: 'content/skills.json'
         fields:
-          - label: 'Order'
-            name: 'order'
-            widget: 'hidden'
-            default: 2
-
           - label: 'Id'
             name: 'id'
             widget: 'hidden'
@@ -126,11 +108,6 @@ collections:
         name: 'videos'
         file: 'content/videos.json'
         fields:
-          - label: 'Order'
-            name: 'order'
-            widget: 'hidden'
-            default: 3
-
           - label: 'Id'
             name: 'id'
             widget: 'hidden'
@@ -158,11 +135,6 @@ collections:
         name: 'contact'
         file: 'content/contact.json'
         fields:
-          - label: 'Order'
-            name: 'order'
-            widget: 'hidden'
-            default: 3
-
           - label: 'Id'
             name: 'id'
             widget: 'hidden'

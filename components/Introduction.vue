@@ -1,20 +1,15 @@
 <template lang="html">
-  <section :id="intro.id">
-    <div class="container padding all">
-      <div class="image" :style="img" />
-      <div class="text slide-up">
-        <h1>{{ intro.name }}</h1>
-        <h2 class="bar">{{ intro.position }}</h2>
-        <template v-for="d in description">
-          <p>{{ d }}</p>
-        </template>
-        <div class="link">
-          <btn>View Story</btn>
-        </div>
+  <section :id="data.id" class="container padding all">
+    <div class="image" :style="img" />
+    <div class="text slide-up">
+      <h1>{{ data.name }}</h1>
+      <h2 class="bar">{{ data.position }}</h2>
+      <template v-for="d in description">
+        <p>{{ d }}</p>
+      </template>
+      <div class="link">
+        <btn>View Story</btn>
       </div>
-    </div>
-    <div class="featured padding sides">
-      <h1>Featured In</h1>
     </div>
   </section>
 </template>
@@ -26,16 +21,10 @@ export default {
   components: { btn },
   computed: {
     img() {
-      return { backgroundImage: `url(${this.intro.photo})` }
+      return { backgroundImage: `url(${this.data.photo})` }
     },
     description() {
-      return this.intro.description.split('\n')
-    },
-    intro() {
-      return this.data.introduction
-    },
-    features() {
-      return this.features
+      return this.data.description.split('\n')
     }
   }
 }
@@ -43,11 +32,6 @@ export default {
 
 <style scoped>
 section {
-  display: flex;
-  flex-direction: column;
-}
-
-.container {
   flex: 1 1 auto;
   display: flex;
   flex-direction: column;
@@ -89,15 +73,6 @@ section {
   box-shadow: 0px 2px 7px rgba(0, 0, 0, 0.1);
 }
 
-.featured {
-  flex: 0 0 auto;
-  width: 100%;
-  background: #222;
-  color: white;
-  padding-top: 30px;
-  padding-bottom: 30px;
-}
-
 @media screen and (min-width: 601px) {
   .image {
     margin-top: 40px;
@@ -109,9 +84,6 @@ section {
     min-height: 700px;
     height: 100vh;
     max-height: 75vw;
-  }
-
-  .container {
     flex-direction: row;
     padding-bottom: 0px;
     min-height: auto;

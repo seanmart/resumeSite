@@ -2,7 +2,7 @@
   <div class="page site-width fade-on">
     <topnav :data="sections" :page="page" />
     <template v-for="section in sections">
-      <component :is="section.id" :data="data" />
+      <component :is="section.component" :data="data" />
     </template>
   </div>
 </template>
@@ -11,6 +11,7 @@
 import sectionData from '@/content/sections'
 import topnav from '@/components/Nav'
 import introduction from '@/components/Introduction'
+import news from '@/components/News'
 import skills from '@/components/Skills'
 import videos from '@/components/Videos'
 import contact from '@/components/Contact'
@@ -19,6 +20,7 @@ export default {
   components: {
     topnav,
     introduction,
+    news,
     videos,
     skills,
     contact

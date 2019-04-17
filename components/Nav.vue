@@ -7,12 +7,12 @@
           <div />
           <div />
         </li>
-        <li v-for="(section, index) in data">
+        <li v-for="section in sections">
           <a
             href="#"
             v-scroll-to="set('v-scroll', section.id)"
-            @click="set('a', index)"
-            :class="{ active: is('a', index) }"
+            @click="set('a', section.order)"
+            :class="{ active: is('a', section.order) }"
             :style="{ height: navHeight }"
           >
             {{ section.sectionName }}
@@ -24,6 +24,7 @@
 </template>
 
 <script>
+import { filter } from 'lodash'
 export default {
   data() {
     return {
@@ -48,6 +49,9 @@ export default {
     window.removeEventListener('scroll', this.handleScroll)
   },
   computed: {
+    sections() {
+      return filter(this.data, 'id')
+    },
     mobileMenuHeight() {
       if (!this.mobile || !this.open) return {}
       return { height: `${this.data.length * this.page.navHeight}px` }
@@ -56,7 +60,7 @@ export default {
       return `${this.page.navHeight}px`
     },
     elements() {
-      return this.data.map(s => document.getElementById(s.id))
+      return this.sections.map(s => document.getElementById(s.id))
     }
   },
   watch: {

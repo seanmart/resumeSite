@@ -18,35 +18,62 @@ collections:
             name: 'order'
             widget: 'hidden'
             default: 0
+
           - label: 'Id'
             name: 'id'
             widget: 'hidden'
             default: 'introduction'
+
+          - label: 'Component'
+            name: 'component'
+            widget: 'hidden'
+            default: 'introduction'
+
           - label: 'Section Name'
             name: 'sectionName'
             default: 'Introduction'
             widget: 'string'
+
           - label: 'Name'
             name: 'name'
             widget: 'string'
+
           - label: 'Position'
             name: 'position'
             widget: 'string'
+
           - label: 'Description'
             name: 'description'
             widget: 'text'
+
           - label: 'Photo'
             name: 'photo'
             widget: 'file'
             media_library:
               config:
                 multiple: false
-      - label: 'Featured In'
-        name: 'featuredIn'
-        file: 'content/features.json'
+
+      - label: 'News'
+        name: 'news'
+        file: 'content/news.json'
         fields:
-          - label: 'Feature List'
-            name: 'features'
+          - label: 'Order'
+            name: 'order'
+            widget: 'hidden'
+            default: 1
+
+          - label: 'Component'
+            name: 'component'
+            widget: 'hidden'
+            default: 'news'
+
+          - label: 'Section Name'
+            name: 'news'
+            default: 'Featured In:'
+            widget: 'string'
+
+          - label: 'News List'
+            name: 'list'
             widget: 'list'
             fields:
               - label: 'Image (option 1)'
@@ -58,29 +85,95 @@ collections:
               - label: 'Link'
                 name: 'link'
                 widget: 'string'
-      - label: 'Key Skills'
+
+      - label: 'Skills'
         name: 'skills'
         file: 'content/skills.json'
         fields:
           - label: 'Order'
             name: 'order'
             widget: 'hidden'
-            default: 1
+            default: 2
+
           - label: 'Id'
             name: 'id'
             widget: 'hidden'
             default: 'skills'
+
+          - label: 'Component'
+            name: 'component'
+            widget: 'hidden'
+            default: 'skills'
+
           - label: 'Section Name'
             name: 'sectionName'
-            default: 'Key Skills'
+            default: 'Skills'
             widget: 'string'
-          - label: 'Skills'
-            name: 'skills'
+
+          - label: 'Skills List'
+            name: 'list'
             widget: 'list'
             fields:
               - label: 'Title'
                 name: 'title'
                 widget: 'string'
+
               - label: 'Description'
                 name: 'description'
                 widget: 'text'
+
+      - label: 'Videos'
+        name: 'videos'
+        file: 'content/videos.json'
+        fields:
+          - label: 'Order'
+            name: 'order'
+            widget: 'hidden'
+            default: 3
+
+          - label: 'Id'
+            name: 'id'
+            widget: 'hidden'
+            default: 'videos'
+
+          - label: 'Component'
+            name: 'component'
+            widget: 'hidden'
+            default: 'videos'
+
+          - label: 'Section Name'
+            name: 'sectionName'
+            default: 'Videos'
+            widget: 'string'
+
+          - label: 'Videos List'
+            name: 'list'
+            widget: 'list'
+            fields:
+              - label: 'Link'
+                name: 'link'
+                widget: 'string'
+
+      - label: 'Contact'
+        name: 'contact'
+        file: 'content/contact.json'
+        fields:
+          - label: 'Order'
+            name: 'order'
+            widget: 'hidden'
+            default: 3
+
+          - label: 'Id'
+            name: 'id'
+            widget: 'hidden'
+            default: 'videos'
+
+          - label: 'Component'
+            name: 'component'
+            widget: 'hidden'
+            default: 'contact'
+
+          - label: 'Section Name'
+            name: 'sectionName'
+            default: 'Contact'
+            widget: 'string'

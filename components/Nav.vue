@@ -11,8 +11,8 @@
           <a
             href="#"
             v-scroll-to="set('v-scroll', section.id)"
-            @click="set('a', section.order)"
-            :class="{ active: is('a', section.order) }"
+            @click="set('a', section.id)"
+            :class="{ active: is('a', section.id) }"
             :style="{ height: navHeight }"
           >
             {{ section.sectionName }}
@@ -30,7 +30,7 @@ export default {
     return {
       scrolled: false,
       open: false,
-      active: 0,
+      active: null,
       mobile: false,
       transition: false,
       cancelSetActive: false,
@@ -60,7 +60,10 @@ export default {
       return `${this.page.navHeight}px`
     },
     elements() {
-      return this.sections.map(s => document.getElementById(s.id))
+      return this.sections.map(s => ({
+        el: document.getElementById(s.id),
+        id: s.id
+      }))
     }
   },
   watch: {
@@ -88,9 +91,9 @@ export default {
       this.scrolled = window.scrollY > 0
     },
     checkActive() {
-      this.elements.some((el, index) => {
-        if (el.getBoundingClientRect().bottom > this.page.navHeight) {
-          this.active = index
+      this.elements.some(item => {
+        if (item.el.getBoundingClientRect().bottom > this.page.navHeight) {
+          this.active = item.id
           return true
         }
         return false
@@ -169,6 +172,7 @@ a{
   align-items: center;
   padding: 0px 20px;
   font-weight: 500;
+  transition: color .25s
 }
 
 a.active{

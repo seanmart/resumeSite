@@ -36,7 +36,6 @@ section {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  min-height: 100vh;
 }
 
 .text {
@@ -79,17 +78,15 @@ section {
 }
 
 @media screen and (min-width: 1000px) {
-  section {
-    min-height: 700px;
-    height: 100vh;
-    max-height: 75vw;
+  section.all {
     flex-direction: row;
+    align-items: stretch;
     padding-bottom: 0px;
   }
 
   .text {
     flex: 1 1 auto;
-    margin: 40px 0px;
+    margin: 50px 0px;
     text-align: left;
   }
 
@@ -99,27 +96,18 @@ section {
 
   .image {
     flex: 0 0 60%;
-    align-self: stretch;
-    margin-bottom: 0px;
-    margin-right: 20px;
+    margin: 40px 20px 0px 0px;
     border-radius: 0px;
     box-shadow: none;
     height: auto;
     width: auto;
     max-height: 100%;
-    max-width: 600px;
+    max-width: 100%;
   }
 
   .bar::after {
     margin-left: 0px;
     margin-right: 0px;
-  }
-}
-
-@media screen and (min-width: 1200px) {
-  section {
-    min-height: 600px;
-    max-height: 900px;
   }
 }
 </style>

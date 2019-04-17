@@ -122,14 +122,6 @@ p {
 
 /* ------- global animations -------*/
 
-.fade-on {
-  animation: fadeon 1s;
-}
-
-.slide-up {
-  animation: slideup 1s;
-}
-
 @keyframes slideup {
   0% {
     transform: translateY(50px);

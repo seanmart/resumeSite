@@ -45,6 +45,7 @@ export default {
 </script>
 <style lang="css" scoped>
 .page {
+  animation: fadeon 2s;
   background: #fff;
   margin: 0px auto;
 }

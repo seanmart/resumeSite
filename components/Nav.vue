@@ -2,7 +2,7 @@
   <header :class="{ scrolled, open, transition }">
     <nav class="site-width" :style="mobileMenuHeight">
       <ul>
-        <li class="menu" @click="set('menu')">
+        <li class="menu" @click="open = !open">
           <div />
           <div />
           <div />
@@ -10,8 +10,8 @@
         <li v-for="section in sections">
           <a
             href="#"
-            v-scroll-to="set('v-scroll', section.id)"
-            @click="set('a', section.id)"
+            v-scroll-to="setScroll(section.id)"
+            @click="active = section.id"
             :class="{ active: is('a', section.id) }"
             :style="{ height: navHeight }"
           >
@@ -67,9 +67,17 @@ export default {
     }
   },
   watch: {
-    open() {
+    open(to, from) {
       this.transition = true
       setTimeout(() => (this.transition = false), 500)
+
+      if (to) {
+        setTimeout(() => {
+          window.addEventListener('click', this.handleClick)
+        }, 1)
+      } else {
+        window.removeEventListener('click', this.handleClick)
+      }
     }
   },
   methods: {
@@ -78,6 +86,10 @@ export default {
     },
     done() {
       this.cancelSetActive = false
+    },
+    handleClick() {
+      console.log('this ran')
+      this.open = false
     },
     handleResize() {
       this.mobile = window.innerWidth <= 600
@@ -105,24 +117,14 @@ export default {
           return val === this.active
       }
     },
-    set(caller, val) {
-      switch (caller) {
-        case 'a':
-          this.active = val
-          this.open = false
-          break
-        case 'v-scroll':
-          return {
-            el: `#${val}`,
-            duration: 1000,
-            easing: 'ease',
-            onStart: this.start,
-            onDone: this.done,
-            offset: this.offset
-          }
-        case 'menu':
-          this.open = !this.open
-          break
+    setScroll(el) {
+      return {
+        el: `#${el}`,
+        duration: 1000,
+        easing: 'ease',
+        onStart: this.start,
+        onDone: this.done,
+        offset: this.offset
       }
     }
   }

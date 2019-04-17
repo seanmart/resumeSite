@@ -70,14 +70,9 @@ export default {
     open(to, from) {
       this.transition = true
       setTimeout(() => (this.transition = false), 500)
-
-      if (to && !from) {
-        setTimeout(() => {
-          window.addEventListener('click', this.handleClick)
-        }, 10)
-      } else {
-        window.removeEventListener('click', this.handleClick)
-      }
+    },
+    active() {
+      this.open = false
     }
   },
   methods: {

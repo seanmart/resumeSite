@@ -166,7 +166,7 @@ collections:
           - label: 'Id'
             name: 'id'
             widget: 'hidden'
-            default: 'videos'
+            default: 'contact'
 
           - label: 'Component'
             name: 'component'

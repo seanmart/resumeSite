@@ -50,18 +50,18 @@ html {
 
 .padding.all,
 .padding.top {
-  padding-top: 12vw;
+  padding-top: 80px;
 }
 
 .padding.all,
 .padding.bottom {
-  padding-bottom: 12vw;
+  padding-bottom: 80px;
 }
 
 .padding.all,
 .padding.sides {
-  padding-left: 12vw;
-  padding-right: 12vw;
+  padding-left: 5vw;
+  padding-right: 5vw;
 }
 
 @media screen and (min-width: 670px) {

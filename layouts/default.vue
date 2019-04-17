@@ -64,17 +64,7 @@ html {
   padding-right: 5vw;
 }
 
-@media screen and (min-width: 670px) {
-  .padding.all,
-  .padding.top {
-    padding-top: 80px;
-  }
-
-  .padding.all,
-  .padding.bottom {
-    padding-bottom: 80px;
-  }
-
+@media screen and (min-width: 1500px) {
   .padding.all,
   .padding.sides {
     padding-left: 80px;

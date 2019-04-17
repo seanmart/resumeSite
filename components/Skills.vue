@@ -2,10 +2,10 @@
   <section :id="data.id" class="padding sides bottom">
     <h1 class="padding top bottom">{{ data.sectionName }}</h1>
     <div class="container">
-      <template v-for="skill in data.skills">
+      <template v-for="skill in data.list">
         <div class="skill">
-          <h2>{{ data.title }}</h2>
-          <p>{{ data.description }}</p>
+          <h2>{{ skill.title }}</h2>
+          <p>{{ skill.description }}</p>
         </div>
       </template>
     </div>

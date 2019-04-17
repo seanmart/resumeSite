@@ -54,7 +54,7 @@ export default {
     },
     mobileMenuHeight() {
       if (!this.mobile || !this.open) return {}
-      return { height: `${this.data.length * this.page.navHeight}px` }
+      return { height: `${this.sections.length * this.page.navHeight}px` }
     },
     navHeight() {
       return `${this.page.navHeight}px`

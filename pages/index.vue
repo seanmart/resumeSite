@@ -2,7 +2,7 @@
   <div class="page site-width fade-on">
     <topnav :data="sections" :page="page" />
     <template v-for="section in sections">
-      <component :is="section.component" :data="data" />
+      <component :is="section.component" :data="section" />
     </template>
   </div>
 </template>

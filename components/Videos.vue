@@ -2,7 +2,7 @@
   <section :id="data.id" class="padding bottom sides">
     <h1 class="padding top bottom">{{ data.sectionName }}</h1>
     <div class="container">
-      <template v-for="video in data.videos">
+      <template v-for="video in data.list">
         <div class="video">
           <div class="inner-video"></div>
         </div>

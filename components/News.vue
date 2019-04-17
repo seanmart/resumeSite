@@ -13,6 +13,8 @@ export default {
 <style lang="css" scoped>
 
 section {
+  padding-top: 30px;
+  padding-bottom: 30px;
   background: #222;
   color: white;
 }

@@ -68,7 +68,7 @@ collections:
             default: 'news'
 
           - label: 'Section Name'
-            name: 'news'
+            name: 'sectionName'
             default: 'Featured In:'
             widget: 'string'
 

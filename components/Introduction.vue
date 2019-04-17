@@ -1,5 +1,5 @@
 <template lang="html">
-  <section :id="data.id" class="container padding all">
+  <section :id="data.id" class="padding all">
     <div class="image" :style="img" />
     <div class="text slide-up">
       <h1>{{ data.name }}</h1>
@@ -30,9 +30,8 @@ export default {
 }
 </script>
 
-<style scoped>
+<style lang="css" scoped>
 section {
-  flex: 1 1 auto;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -86,7 +85,6 @@ section {
     max-height: 75vw;
     flex-direction: row;
     padding-bottom: 0px;
-    min-height: auto;
   }
 
   .text {

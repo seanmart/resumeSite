@@ -1,9 +1,6 @@
 {
-<<<<<<< HEAD
   "id": "videos",
   "component": "videos",
-=======
->>>>>>> ce57a9976ab882ad4ddbef591851d10b08976744
   "order": 2,
   "id": "videos",
   "sectionName": "Videos",

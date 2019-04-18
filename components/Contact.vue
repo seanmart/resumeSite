@@ -12,6 +12,6 @@ export default {
 
 <style scoped>
 section {
-  height: 600px;
+  height: 100vh;
 }
 </style>

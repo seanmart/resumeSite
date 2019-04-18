@@ -20,6 +20,7 @@
         </li>
       </ul>
     </nav>
+    <div class="backdrop" @click="open = false" />
   </header>
 </template>
 
@@ -70,12 +71,6 @@ export default {
     open(to, from) {
       this.transition = true
       setTimeout(() => (this.transition = false), 500)
-
-      if (to) {
-        setTimeout(() => window.addEventListener('click', this.close), 100)
-      } else {
-        window.removeEventListener('click', this.close)
-      }
     },
     active() {
       this.open = false
@@ -201,6 +196,16 @@ a.active{
 }
 
 @media screen and (max-width:600px){
+
+  .open .backdrop{
+    position: fixed;
+    top: 0px;
+    left: 0px;
+    height: 100vh;
+    width: 100vw;
+    z-index: -1
+  }
+
   header{
     margin: 5vw;
   }

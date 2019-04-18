@@ -139,6 +139,7 @@ nav {
   margin: 0px auto;
   position: relative;
   overflow: hidden;
+  transition: box-shadow .5s;
   background: rgba(255, 255, 255, 0.95);
   -webkit-backdrop-filter: blur(3px);
   backdrop-filter: blur(3px);

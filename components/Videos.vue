@@ -45,7 +45,7 @@ section {
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
-  margin: 0px -10px;
+  margin: 0px -10px -40px;
 }
 
 .video-container {

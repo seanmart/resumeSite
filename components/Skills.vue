@@ -23,7 +23,7 @@ export default {
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
-  margin: 0px -20px;
+  margin: 0px -20px -40px;
 }
 
 .skill {

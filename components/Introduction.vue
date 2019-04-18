@@ -33,43 +33,59 @@ export default {
 <style lang="css" scoped>
 section {
   display: flex;
-  flex-direction: column;
   justify-content: center;
-  align-items: center;
-  min-height: 100vh;
 }
 
 .text {
   flex: 0 0 auto;
   max-width: 500px;
-  text-align: center;
 }
 
 .text h1 {
   margin: 7px 0px;
 }
 
-.text p {
-  text-align: left;
-}
 
 .link {
   margin-top: 40px;
-  text-align: center;
 }
 
 .image {
   flex: 0 0 auto;
-  height: 30vw;
-  width: 30vw;
-  max-height: 200px;
-  max-width: 200px;
-  margin: 0px 0px 40px;
-  border-radius: 100%;
   background-size: contain;
   background-repeat: no-repeat;
   background-position: bottom;
-  box-shadow: 0px 2px 7px rgba(0, 0, 0, 0.1);
+}
+
+@media screen and (max-width: 999px){
+  section{
+    min-height: 100vh;
+    align-items: center;
+    flex-direction: column;
+  }
+
+  .text{
+      text-align: center;
+  }
+
+  .text p {
+    text-align: left;
+  }
+
+  .link{
+    text-align: center;
+  }
+
+  .image{
+    height: 30vw;
+    width: 30vw;
+    max-height: 200px;
+    max-width: 200px;
+    margin: 0px 0px 40px;
+    border-radius: 100%;
+    border: 1px solid #eee;
+    box-shadow: 0px 15px 20px -10px rgba(0, 0, 0, 0.15);
+  }
 }
 
 @media screen and (min-width: 601px) {

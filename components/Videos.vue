@@ -3,8 +3,8 @@
     <h1 class="padding top bottom">{{ data.sectionName }}</h1>
     <div class="container">
       <template v-for="video in data.list">
-        <div class="video" @click="selectVideo(video)">
-          <div class="video-ratio"></div>
+        <div class="video-container" @click="selectVideo(video)">
+          <div class="video-ratio video"></div>
         </div>
       </template>
     </div>
@@ -24,7 +24,7 @@ export default {
 
 <style scoped>
 section {
-  background: #eee;
+  border-top: 1px solid #eee;
 }
 .container {
   display: flex;
@@ -33,23 +33,25 @@ section {
   margin: 0px -10px;
 }
 
-.video {
+.video-container {
   flex: 0 0 100%;
   padding: 0px 10px 20px;
 }
 
-.video div {
-  background: #ccc;
+.video {
+  background: #fff;
+  border: 1px solid #eee;
+  box-shadow: 0px 15px 20px -10px rgba(0, 0, 0, 0.15);
 }
 
 @media screen and (min-width: 800px) {
-  .video {
+  .video-container {
     flex: 0 0 50%;
   }
 }
 
 @media screen and (min-width: 1000px) {
-  .video {
+  .video-container {
     flex: 0 0 33.333%;
   }
 }

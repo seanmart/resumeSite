@@ -87,6 +87,7 @@ export default {
   transition: transform .25s;
   width: 50px;
   padding: 10px;
+  z-index: 1
 }
 
 .button:active{
@@ -96,7 +97,8 @@ export default {
 .cls-1{fill:none;stroke:#fff;stroke-linecap:round;stroke-miterlimit:10;stroke-width:3px;}
 
 .video{
-  background: #ccc
+  background: #fff;
+  box-shadow: 0px 15px 20px -10px rgba(0, 0, 0, 1);
 }
 
 .video-container{

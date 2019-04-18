@@ -1,26 +1,11 @@
 {
   "id": "videos",
   "component": "videos",
-  "id": "videos",
   "sectionName": "Videos",
   "list": [
     {
-      "link": "video 1"
-    },
-    {
-      "link": "video 2"
-    },
-    {
-      "link": "video 3"
-    },
-    {
-      "link": "video 4"
-    },
-    {
-      "link": "video 5"
-    },
-    {
-      "link": "video 6"
+      "poster": "/images/uploads/video1.jpg",
+      "link": "www.google.com"
     }
   ]
 }

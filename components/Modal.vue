@@ -120,9 +120,7 @@ export default {
 }
 
 .video{
-  background: #fff;
   position: relative;
-  box-shadow: 0px 15px 20px -10px rgba(0, 0, 0, 1);
 }
 
 .poster{
@@ -138,8 +136,8 @@ export default {
   position: absolute;
   top: 0px;
   left: 0px;
-  right: 0px;
-  bottom: 0px;
+  width: 100%;
+  height: 100%;
 }
 
 @media screen and (min-width: 800px){

@@ -56,6 +56,11 @@ section {
 .video {
   background: #aaa;
   position: relative;
+  transition: transform 0.25s;
+}
+
+.video:active {
+  transform: scale(0.95);
 }
 
 .poster {

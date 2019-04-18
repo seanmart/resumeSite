@@ -1,5 +1,5 @@
 <template lang="html">
-  <div id="modal" :class="{ open: modal.link, transition }" @click="clicked">
+  <div id="modal" :class="{ open: modal.link, transition }">
     <svg
       class="button"
       xmlns="http://www.w3.org/2000/svg"
@@ -11,7 +11,11 @@
     </svg>
 
     <div class="video-container">
-      <div class="video-ratio video"></div>
+      <div
+        class="video-ratio video"
+        ref="video"
+        v-clicked-outside="{ exclude: ['video'], handler: 'clicked' }"
+      ></div>
     </div>
   </div>
 </template>
@@ -35,10 +39,8 @@ export default {
     }
   },
   methods: {
-    clicked(event) {
-      if (event.path[0].id === 'modal') {
-        this.$store.commit('unsetModal')
-      }
+    clicked() {
+      this.$store.commit('unsetModal')
     }
   }
 }

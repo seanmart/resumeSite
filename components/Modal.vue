@@ -10,13 +10,11 @@
       <line class="cls-1" x1="51" y1="51" x2="1" y2="1" />
     </svg>
 
-    <div class="video-container">
-      <div
-        class="video-ratio video"
-        ref="video"
-        v-clicked-outside="{ exclude: ['video'], handler: 'clicked' }"
-      ></div>
+    <div class="video-container" v-if="modal.type === 'video'">
+      <div class="video-ratio video"></div>
     </div>
+
+    <div class="backdrop" @click="$store.commit('unsetModal')" />
   </div>
 </template>
 
@@ -73,6 +71,14 @@ export default {
   transition: background .5s, opacity .5s
 }
 
+.open .backdrop{
+  position: fixed;
+  top: 0px;
+  left: 0px;
+  height: 100vh;
+  width: 100vw;
+  z-index: -1
+}
 
 .button{
   position: absolute;

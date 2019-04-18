@@ -33,6 +33,14 @@ html {
   -moz-tap-highlight-color: rgba(0, 0, 0, 0);
 }
 
+section {
+  border-top: 1px solid #eee;
+}
+
+section.no-line {
+  border: none;
+}
+
 /*--- global sizes ---*/
 
 .site-width {

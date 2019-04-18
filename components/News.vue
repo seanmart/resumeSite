@@ -1,5 +1,5 @@
 <template lang="html">
-  <section class="padding sides">
+  <section class="padding sides no-line">
     <h1>{{ data.sectionName }}</h1>
   </section>
 </template>

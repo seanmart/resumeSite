@@ -1,5 +1,5 @@
 <template lang="html">
-  <section :id="data.id" class="padding all">
+  <section :id="data.id" class="padding all no-line">
     <div class="image" :style="img" />
     <div class="text slide-up">
       <h1>{{ data.name }}</h1>

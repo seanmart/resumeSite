@@ -23,7 +23,7 @@ export default {
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
-  margin: 0px -20px -40px;
+  margin-bottom: -40px;
 }
 
 .skill {
@@ -31,10 +31,18 @@ export default {
   padding-bottom: 40px;
 }
 
+.skill p {
+  margin-bottom: 0px;
+}
+
 @media screen and (min-width: 800px) {
+  .container {
+    margin: 0px -10px -40px;
+  }
+
   .skill {
     flex: 0 0 50%;
-    padding-right: 40px;
+    padding: 0px 10px 40px;
   }
 }
 

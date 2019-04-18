@@ -34,9 +34,6 @@ export default {
 </script>
 
 <style scoped>
-section {
-  border-top: 1px solid #eee;
-}
 .container {
   display: flex;
   flex-direction: row;

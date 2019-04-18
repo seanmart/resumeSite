@@ -1,7 +1,5 @@
 backend:
-  name: 'github'
-  repo: 'seanmart/resumeSite' # Branch to update (optional; defaults to master)
-  branch: 'master'
+  name: 'git-gateway'
 publish_mode: 'editorial_workflow'
 media_folder: 'static/images/uploads'
 public_folder: 'images/uploads'

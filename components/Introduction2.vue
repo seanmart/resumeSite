@@ -1,6 +1,6 @@
 <template lang="html">
   <section :id="data.id" class="padding all no-line">
-    <div class="image" :style="img" />
+    <div class="image" :style="img(this.data.photo)" />
     <div class="text slide-up">
       <h1>{{ data.name }}</h1>
       <h2 class="bar">{{ data.position }}</h2>
@@ -11,6 +11,9 @@
         <btn>View Story</btn>
       </div>
     </div>
+    <transition>
+      <div class="bg-image" v-if="data.backgroundPhotos.length > 0" style="" />
+    </transition>
   </section>
 </template>
 
@@ -19,12 +22,32 @@ import btn from '@/components/Button'
 export default {
   props: ['data'],
   components: { btn },
+  data() {
+    return {
+      index: 0
+    }
+  },
+  mounted() {
+    if (this.data.backgroundPhotos.length > 0) {
+      this.loop()
+    }
+  },
   computed: {
-    img() {
-      return { backgroundImage: `url(${this.data.photo})` }
-    },
     description() {
       return this.data.description.split('\n')
+    }
+  },
+  methods: {
+    loop() {
+      setTimeout(() => this.setIndex(), 5000)
+    },
+    setIndex() {
+      this.index =
+        index === this.data.backgroundPhotos.length ? 0 : this.index + 1
+      this.loop()
+    },
+    img(img) {
+      return { backgroundImage: `url(${img})` }
     }
   }
 }

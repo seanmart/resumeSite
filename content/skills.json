@@ -1,6 +1,6 @@
 {
-  "component": "skills",
   "id": "skills",
+  "component": "skills",
   "sectionName": "Key Skills",
   "list": [
     {
@@ -26,6 +26,10 @@
     {
       "title": "Perseverance and Grit",
       "description": "Perseverance and dedication to continually provide confidence and clarity in this ever-changing navigation of financial management. "
+    },
+    {
+      "title": "kjhgkjhg",
+      "description": "mjghfjkhgfkjgh"
     }
   ]
 }

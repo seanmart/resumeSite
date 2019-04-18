@@ -5,11 +5,7 @@
   "list": [
     {
       "poster": "/images/uploads/video1.jpg",
-      "link": "https://www.youtube.com/watch?v=Vwbkz0DSkHU"
-    },
-    {
-      "poster": "/images/uploads/video1.jpg",
-      "link": "https://www.youtube.com/watch?v=Vwbkz0DSkHU"
+      "link": "https://www.youtube.com/embed/Vwbkz0DSkHU"
     }
   ]
 }

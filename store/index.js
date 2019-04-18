@@ -1,13 +1,13 @@
 export const state = () => ({
   modal: {
     type: null,
-    link: null
+    data: null
   }
 })
 
 export const mutations = {
-  setModal(state, { type, link }) {
-    state.modal = { type, link }
+  setModal(state, { type, data }) {
+    state.modal = { type, data }
   },
   unsetModal(state) {
     state.modal = {}

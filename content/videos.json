@@ -5,7 +5,15 @@
   "list": [
     {
       "poster": "/images/uploads/video1.jpg",
-      "link": "www.google.com"
+      "link": ""
+    },
+    {
+      "poster": "/images/uploads/video1.jpg",
+      "link": ""
+    },
+    {
+      "poster": "/images/uploads/video1.jpg",
+      "link": ""
     }
   ]
 }

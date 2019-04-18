@@ -145,7 +145,7 @@ nav {
 }
 
 .scrolled nav{
-  box-shadow: 0px 0px 3px rgba(0,0,0,.15)
+  box-shadow: 0px 2px 5px rgba(0,0,0,.1);
 }
 
 ul {
@@ -197,6 +197,7 @@ a.active{
 
 @media screen and (max-width:600px){
 
+
   .open .backdrop{
     position: fixed;
     top: 0px;
@@ -225,15 +226,15 @@ a.active{
   .open nav{
     background: white;
     width: 100%;
-    box-shadow: 0px 15px 50px -10px rgba(0, 0, 0, .2);
+    box-shadow: 0px 10px 30px -10px rgba(0,0,0,.4);
   }
 
   .transition ul, .transition nav,.transition.open a{
-    transition: .5s
+    transition: .3s
   }
 
   .transition a{
-    transition: .25s
+    transition: .15s
   }
 
   a{

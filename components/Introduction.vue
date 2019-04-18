@@ -83,7 +83,7 @@ section {
     max-width: 200px;
     margin: 0px 0px 40px;
     border-radius: 100%;
-    box-shadow: 0px 15px 50px -10px rgba(0, 0, 0, .2);
+    box-shadow: 0 1px 3px 0px rgba(0,0,0,.2) inset;
   }
 }
 

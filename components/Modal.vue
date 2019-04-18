@@ -1,5 +1,5 @@
 <template lang="html">
-  <div id="modal" :class="{ open: modal.link, transition }">
+  <div id="modal" :class="{ open: modal.data, transition }">
     <svg
       class="button"
       xmlns="http://www.w3.org/2000/svg"
@@ -11,7 +11,13 @@
     </svg>
 
     <div class="video-container" v-if="modal.type === 'video'">
-      <div class="video-ratio video"></div>
+      <div class="video-ratio video">
+        <div
+          class="poster"
+          v-if="!modal.data.link"
+          :style="img(modal.data.poster)"
+        />
+      </div>
     </div>
 
     <div class="backdrop" @click="$store.commit('unsetModal')" />
@@ -39,6 +45,10 @@ export default {
   methods: {
     clicked() {
       this.$store.commit('unsetModal')
+    },
+    img(poster) {
+      if (!poster) return
+      return { backgroundImage: `url(${poster})` }
     }
   }
 }
@@ -98,7 +108,17 @@ export default {
 
 .video{
   background: #fff;
+  position: relative;
   box-shadow: 0px 15px 20px -10px rgba(0, 0, 0, 1);
+}
+
+.poster{
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  bottom: 0px;
+  right: 0px;
+  background-size: cover;
 }
 
 .video-container{

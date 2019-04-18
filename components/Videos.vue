@@ -4,7 +4,7 @@
     <div class="container">
       <template v-for="video in data.list">
         <div class="video-container" @click="selectVideo(video)">
-          <div class="video-ratio video"></div>
+          <div class="video-ratio video" :style="img(video.poster)"></div>
         </div>
       </template>
     </div>
@@ -17,6 +17,10 @@ export default {
   methods: {
     selectVideo(video) {
       this.$store.commit('setModal', { type: 'video', link: video })
+    },
+    img(poster) {
+      if (!poster) return
+      return { backgroundImage: `url(${poster})` }
     }
   }
 }
@@ -35,13 +39,12 @@ section {
 
 .video-container {
   flex: 0 0 100%;
-  padding: 0px 10px 20px;
+  padding: 0px 10px 40px;
 }
 
 .video {
   background: #fff;
-  border: 1px solid #eee;
-  box-shadow: 0px 15px 20px -10px rgba(0, 0, 0, 0.15);
+  box-shadow: 0px 25px 40px -10px rgba(0, 0, 0, 0.15);
 }
 
 @media screen and (min-width: 800px) {

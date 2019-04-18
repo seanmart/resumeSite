@@ -48,6 +48,8 @@ collections:
               config:
                 multiple: false
 
+      #----------------------------------------------
+
       - label: 'News'
         name: 'news'
         file: 'content/news.json'
@@ -72,6 +74,8 @@ collections:
               - label: 'Link'
                 name: 'link'
                 widget: 'string'
+
+      #----------------------------------------------
 
       - label: 'Skills'
         name: 'skills'
@@ -104,6 +108,8 @@ collections:
                 name: 'description'
                 widget: 'text'
 
+      #----------------------------------------------
+
       - label: 'Videos'
         name: 'videos'
         file: 'content/videos.json'
@@ -127,9 +133,18 @@ collections:
             name: 'list'
             widget: 'list'
             fields:
+              - label: 'Poster'
+                name: 'poster'
+                widget: 'file'
+                media_library:
+                  config:
+                    multiple: false
+
               - label: 'Link'
                 name: 'link'
                 widget: 'string'
+
+      #----------------------------------------------
 
       - label: 'Contact'
         name: 'contact'

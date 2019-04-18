@@ -133,13 +133,6 @@ collections:
             name: 'list'
             widget: 'list'
             fields:
-              - label: 'Poster'
-                name: 'poster'
-                widget: 'file'
-                media_library:
-                  config:
-                    multiple: false
-
               - label: 'Link'
                 name: 'link'
                 widget: 'string'

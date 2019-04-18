@@ -4,8 +4,10 @@
   "sectionName": "Videos",
   "list": [
     {
-      "poster": "/images/uploads/video1.jpg",
-      "link": "https://www.youtube.com/embed/Vwbkz0DSkHU?rel=0;&autoplay=1"
+      "link": "https://www.youtube.com/embed/Vwbkz0DSkHU"
+    },
+    {
+      "link": "https://www.youtube.com/embed/aUYSDEYdmzw"
     }
   ]
 }

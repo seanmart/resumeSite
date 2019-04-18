@@ -17,6 +17,14 @@
           v-if="!modal.data.link"
           :style="img(modal.data.poster)"
         />
+
+        <iframe
+          v-if="modal.data.link"
+          :src="modal.data.link"
+          frameborder="0"
+          allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+          allowfullscreen
+        ></iframe>
       </div>
     </div>
 
@@ -106,6 +114,11 @@ export default {
 
 .cls-1{fill:none;stroke:#fff;stroke-linecap:round;stroke-miterlimit:10;stroke-width:3px;}
 
+.video-container{
+  width: 100vw;
+  max-width: 140vh;
+}
+
 .video{
   background: #fff;
   position: relative;
@@ -121,9 +134,12 @@ export default {
   background-size: cover;
 }
 
-.video-container{
-  width: 100vw;
-  max-width: 140vh;
+.video iframe{
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  right: 0px;
+  bottom: 0px;
 }
 
 @media screen and (min-width: 800px){

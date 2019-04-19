@@ -1,7 +1,7 @@
 <template lang="html">
-  <section :id="data.id" class="padding all no-line">
-    <div class="image" :style="img" />
-    <div class="text slide-up">
+  <section :id="data.id" class="padding top sides no-line">
+    <div class="image" :style="img(this.data.photo)" />
+    <div class="text padding bottom">
       <h1>{{ data.name }}</h1>
       <h2 class="bar">{{ data.position }}</h2>
       <template v-for="d in description">
@@ -20,11 +20,13 @@ export default {
   props: ['data'],
   components: { btn },
   computed: {
-    img() {
-      return { backgroundImage: `url(${this.data.photo})` }
-    },
     description() {
       return this.data.description.split('\n')
+    }
+  },
+  methods: {
+    img(img) {
+      return { backgroundImage: `url(${img})` }
     }
   }
 }
@@ -32,6 +34,7 @@ export default {
 
 <style lang="css" scoped>
 section {
+  background-size: cover;
   display: flex;
   justify-content: center;
 }
@@ -45,8 +48,7 @@ section {
   margin: 7px 0px;
 }
 
-
-.link {
+.link{
   margin-top: 40px;
 }
 
@@ -78,24 +80,20 @@ section {
   }
 
   .image{
+    background-color: white;
     height: 30vw;
     width: 30vw;
     max-height: 200px;
     max-width: 200px;
-    margin: 0px 0px 40px;
+    margin-bottom: 40px;
     border-radius: 100%;
     box-shadow: 0 1px 10px 0px rgba(0,0,0,.1) inset;
   }
 }
 
-@media screen and (min-width: 601px) {
-  .image {
-    margin-top: 40px;
-  }
-}
 
 @media screen and (min-width: 1000px) {
-  section.all {
+  section{
     flex-direction: row;
     align-items: stretch;
     padding-bottom: 0px;
@@ -103,8 +101,10 @@ section {
 
   .text {
     flex: 1 1 auto;
-    margin: 50px 0px;
     text-align: left;
+    margin-left: 40px;
+    margin-bottom: 40px;
+    margin-top: 40px;
   }
 
   .link {
@@ -113,11 +113,11 @@ section {
 
   .image {
     flex: 0 0 60%;
-    margin: 40px 20px 0px 0px;
     border-radius: 0px;
     box-shadow: none;
     height: auto;
     width: auto;
+    margin-top: 40px;
     max-height: 100%;
     max-width: 100%;
   }

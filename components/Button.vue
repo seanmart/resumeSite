@@ -11,9 +11,10 @@ export default {}
 <style lang="css" scoped>
 .button{
   display: inline-block;
-  padding: 9px 15px;
-  border: 1px solid #999;
-  color: #999;
+  padding: 15px 25px;
+  border-radius: 3px;
+  background: #3c91e6;
+  color: white;
   text-transform: uppercase;
 }
 </style>

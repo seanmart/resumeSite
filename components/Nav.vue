@@ -140,12 +140,12 @@ nav {
   position: relative;
   overflow: hidden;
   transition: box-shadow .5s;
-  background: rgba(255, 255, 255, 0.95);
   -webkit-backdrop-filter: blur(3px);
   backdrop-filter: blur(3px);
 }
 
 .scrolled nav{
+  background: rgba(255, 255, 255, 0.95);
   box-shadow: 0px 2px 5px rgba(0,0,0,.1);
 }
 

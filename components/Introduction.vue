@@ -103,8 +103,8 @@ section {
     flex: 1 1 auto;
     text-align: left;
     margin-left: 40px;
-    margin-bottom: 40px;
-    margin-top: 40px;
+    margin-bottom: 20px;
+    margin-top: 20px;
   }
 
   .link {
@@ -117,7 +117,7 @@ section {
     box-shadow: none;
     height: auto;
     width: auto;
-    margin-top: 40px;
+    margin-top: 20px;
     max-height: 100%;
     max-width: 100%;
   }
